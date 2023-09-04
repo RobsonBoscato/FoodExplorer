@@ -7,9 +7,18 @@ export const Container = styled.div `
 
   display: table;
   align-items: center;
-
+  
   flex-direction: column;
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_700 };
+  
+  > p {
+    margin-top: 60px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 140%;
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
+    font-family: ${({ theme }) => theme.FONTS.POPPINS};
+  }
 `
 export const Background = styled.div`
   display: flex;
@@ -73,13 +82,12 @@ export const TextBox = styled.div`
 
 `
 export const Session = styled.div `
-  margin-top: 110px;
+  margin-top: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
 `
-
 export const Card = styled.div `
   display: flex;
   width: 210px;
@@ -102,6 +110,7 @@ export const Card = styled.div `
   font-style: normal;
   font-weight: 500;
   line-height: 24px; 
+  font-family: ${({ theme }) => theme.FONTS.POPPINS};
 }
 
 > span {
@@ -109,7 +118,29 @@ export const Card = styled.div `
   font-size: 16px;
   line-height: 100%;
 }
+
+> #button-like {
+
+  position: relative;
+  left: 50%;
+
+  width: 24px;
+  height: 22px;
+}
+
 `
 export const CardBuy = styled.div `
+
+`
+export const CounterDish = styled.div `
+display: flex;
+width: 100px;
+height: 32px;
+padding: 4px 0px;
+justify-content: center;
+align-items: center;
+gap: 14px;
+
+
 
 `
