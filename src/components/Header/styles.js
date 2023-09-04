@@ -8,9 +8,10 @@ export const Container = styled.header `
 
 export const Navbar = styled.div`
   display: flex;
-  margin: 0 auto;
+  width: 100%;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 26px;
 
 
   img {
@@ -21,45 +22,52 @@ export const Navbar = styled.div`
   #receipt {
     max-width: 32px;
     max-height: 32px;
+    min-width: 26px;
+    min-height: 26px;
 
     margin-left: 10px;
-    margin: 0 16px;
+    margin: 0 30px;
   }
   
   #polygon {
     max-width: 24px;
     max-height: 24px;
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: -12px;
   }
   
   #menu {
     max-width: 24px;
     max-height: 18px;
+    
+    min-width: 20px;
+    min-height: 14px;
 
-    margin: 0 16px;
+    margin: 0 30px;
   }
 
   >p {
+    width: 130px;
     font-size: 21px;
     font-weight: 700;
     color: ${({ theme }) => theme.COLORS.GRAY_100};
   }
-
-`
+  
+  `
 export const Dot = styled.button `
   display: flex;
   position: relative;
-  width: 20px;
-  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   
-  border-radius: 99px;
   border: 0;
   top: -12px;
-  right: 40px;
+  right: 70px;  
+  border-radius: 100%;
   
-  border-radius: 99px;
-  background: ${({ theme }) => theme.COLORS.RED_200};
-  
-  font-family: ${({ theme }) => theme.FONTS.POPPINS};
   font-size: 14px;
+  background: ${({ theme }) => theme.COLORS.RED_200};
+  font-family: ${({ theme }) => theme.FONTS.POPPINS};
   color: ${({ theme }) => theme.COLORS.GRAY_100};
 `

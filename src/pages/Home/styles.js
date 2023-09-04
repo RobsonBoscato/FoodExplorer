@@ -11,10 +11,9 @@ export const Container = styled.div `
   flex-direction: column;
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_700 };
 `
-
 export const Background = styled.div`
   display: flex;
-  margin-top: 150px;
+  margin-top: 44px;
   align-items: center;
   justify-content: center;
   
@@ -35,4 +34,82 @@ export const Background = styled.div`
     font-family: ${({ theme }) => theme.FONTS.ROBOTO};
     color: ${({ theme }) => theme.COLORS.orange};
   }
+`
+export const Heading = styled.div`
+  display: flex;
+  margin: 0 auto;
+  width: 375px;
+  height: 120px;
+
+  flex-shrink: 0;
+  background: linear-gradient(180deg, #091E26 0%, #00131C 100%);
+  border-radius: 3px;
+
+  color: ${({ theme }) => theme.COLORS.GRAY_100};
+  font-family: ${({ theme }) => theme.FONTS.POPPINS};
+  font-size: 18px;
+
+  > img {
+    margin-top: -28px;
+    margin-left: -35px;
+    width: 190px;
+    height: 150px;
+  }
+  
+  
+  `
+export const TextBox = styled.div`
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+  > p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 140%;
+
+  }
+
+`
+export const Session = styled.div `
+  margin-top: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+`
+
+export const Card = styled.div `
+  display: flex;
+  width: 210px;
+  height: 292px;
+  padding: 24px;
+  gap: 12px;
+  
+  flex-direction: column;
+  align-items: center;
+
+> img {
+  width: 88px;
+  height: 88px;
+}
+
+> p {
+  color: ${({ theme }) => theme.COLORS.GRAY_300};
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; 
+}
+
+> span {
+  color: ${({ theme }) => theme.COLORS.AQUA_200};
+  font-size: 16px;
+  line-height: 100%;
+}
+`
+export const CardBuy = styled.div `
+
 `

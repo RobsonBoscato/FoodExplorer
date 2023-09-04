@@ -2,7 +2,6 @@ import { Container, Dot, Navbar } from "./styles";
 import polygon from "../../assets/svg/Polygon.svg"
 import Receipt from "../../assets/svg/Receipt.svg"
 import Menu from "../../assets/svg/Menu.svg"
-import macaroon from "../../assets/png/macaroons.png"
 
 export function Header(){
   return (
@@ -31,7 +30,6 @@ export function Header(){
 
       </Navbar>
 
-      <macaroon/>
     </Container>
   )
 }
