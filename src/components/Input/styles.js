@@ -23,6 +23,9 @@ export const Container = styled.div`
     border-radius: 8px;
   }
   
+  > svg {
+    margin-left: 6px;;
+  }
   >&placeholder {
     color: ${({ theme }) => theme.COLORS.GRAY_300};
     font-size: 12px;

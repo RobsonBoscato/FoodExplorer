@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-export const Container = styled.div `
-  background-color: ${({ theme}) => theme.COLORS.BD_DARK_100}; 
+export const Container = styled.div`
+  background-color: ${({ theme }) => theme.COLORS.BD_DARK_100}; 
 `
-export const Session = styled.div `
+export const Session = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   
@@ -11,23 +11,24 @@ export const Session = styled.div `
   justify-content: center;
   gap: 6px;
 `
-export const DishDetails = styled.div `
+export const DishDetails = styled.div`
   display: flex;
   width: 100%;
   height: 100vh;
   flex-direction: column;
   font-family: ${({ theme }) => theme.FONTS.POPPINS};
 
-  > img {
+> img {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 16px auto; 
     width: 264px;
     height: 264px;
-  }
-  `
-export const Heading = styled.div `
+}
+
+`
+export const Heading = styled.div`
 display: flex;
 
 > #arrow {
@@ -48,7 +49,7 @@ display: flex;
 }
 
 `
-export const TextBox = styled.div `
+export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0 20px;
@@ -63,7 +64,7 @@ export const TextBox = styled.div `
     line-height: 140%;
   }
 `
-export const Description = styled.div `
+export const Description = styled.div`
   display: flex;
   text-align: center;
   margin: 0 40px;
@@ -71,7 +72,7 @@ export const Description = styled.div `
   font-weight: 400;
   line-height: 140%;
 `
-export const Tags = styled.div `
+export const Tags = styled.div`
 
   text-align: center;
   font-size: 16px;
@@ -83,15 +84,15 @@ export const Tags = styled.div `
   justify-content: center;
   align-items: center;
   gap: 8px;
-  background-color: ${({ theme}) => theme.COLORS.BD_DARK_1000};
+  background-color: ${({ theme }) => theme.COLORS.BD_DARK_1000};
 `
-export const OrderButton = styled.div `
+export const OrderButton = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
   align-items: stretch;
 `
-export const CounterOrders = styled.div `
+export const CounterOrders = styled.div`
   display: flex;  
   margin: 48px auto;
   width: 100%;
@@ -107,7 +108,7 @@ export const CounterOrders = styled.div `
 }
 
 `
-export const ButtonOrder = styled.div `
+export const ButtonOrder = styled.div`
 
 
 `
