@@ -17,9 +17,7 @@ export function Home() {
 	return (
 		<Container>
 			<Header />
-
 			<Background />
-
 			<Heading id="blue-bd">
 				<img src={macaroon} alt="image of colorfull macaroons floating." />
 
@@ -29,8 +27,8 @@ export function Home() {
 				</TextBox>
 			</Heading>
       <p>Refeições</p>
-			<Session>
 
+			<Session>
 				{plates.map((plate) => (
 					<PlateCard
 						key={plate.id}
@@ -38,8 +36,32 @@ export function Home() {
 						picture={plate.picture}
 						description={plate.description}
 						price={plate.price}
-					/>
-          
+					/>      
+				))}
+			</Session>
+
+      <p>Pratos principais</p>
+			<Session>
+				{plates.map((plate) => (
+					<PlateCard
+						key={plate.id}
+						id={plate.id}
+						picture={plate.picture}
+						description={plate.description}
+						price={plate.price}
+					/>       
+				))}
+
+			</Session>
+      <p>Pratos principais</p>
+			<Session>
+				{plates.map((plate) => (
+					<PlateCard
+						key={plate.id}
+						id={plate.id}
+						picture={plate.picture}
+						description={plate.description}
+					/>               
 				))}
 			</Session>
 

@@ -12,7 +12,8 @@ export const Container = styled.div `
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_700 };
   
   > p {
-    margin-top: 60px;
+    margin-top: 70px;
+    padding: 5%;
     font-size: 18px;
     font-weight: 500;
     line-height: 140%;
@@ -104,6 +105,9 @@ export const Card = styled.div `
 }
 
 > p {
+  padding: 10px;
+  min-height: 70px;
+  clip-path: inset(0% 0% 5px 0px);
   color: ${({ theme }) => theme.COLORS.GRAY_300};
   text-align: center;
   font-size: 14px;

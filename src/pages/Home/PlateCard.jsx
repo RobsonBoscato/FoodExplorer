@@ -4,7 +4,6 @@ import plus from "../../assets/svg/Plus.svg"
 import minus from "../../assets/svg/Minus.svg"
 import emptyLike from "../../assets/svg/EmptyHeart.svg"
 
-
 function PlateCard(props) {
   return (
     <Card>
@@ -15,12 +14,9 @@ function PlateCard(props) {
 			<CardBuy />
       
       <CounterDish>
-      <img src={plus} alt="button to add dishes in your order" />
-   
-      <p>0</p>
-      <img src={minus} alt="button to decrease the quantity at your order" /> 
-
-
+        <img src={plus} alt="button to add dishes in your order" />
+        <p>0</p>
+        <img src={minus} alt="button to decrease the quantity at your order" /> 
       </CounterDish>
 
 			<SmallButton title={"Incluir"} />
