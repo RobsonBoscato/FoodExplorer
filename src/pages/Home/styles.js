@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div `
+export const Container = styled.div`
   height: 100vh;
   width: 100%;
   margin: 0 auto;
@@ -9,7 +9,7 @@ export const Container = styled.div `
   align-items: center;
   
   flex-direction: column;
-  background-color: ${({ theme }) => theme.COLORS.BD_DARK_700 };
+  background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
   
   > p {
     margin-top: 70px;
@@ -82,14 +82,14 @@ export const TextBox = styled.div`
   }
 
 `
-export const Session = styled.div `
+export const Session = styled.div`
   margin-top: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
 `
-export const Card = styled.div `
+export const Card = styled.div`
   display: flex;
   width: 210px;
   height: 292px;
@@ -104,16 +104,18 @@ export const Card = styled.div `
   height: 88px;
 }
 
-> p {
+> a {
   padding: 10px;
   min-height: 70px;
   clip-path: inset(0% 0% 5px 0px);
-  color: ${({ theme }) => theme.COLORS.GRAY_300};
   text-align: center;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px; 
+
+  text-decoration: none;
+  color: ${({ theme }) => theme.COLORS.GRAY_300};
   font-family: ${({ theme }) => theme.FONTS.POPPINS};
 }
 
@@ -133,10 +135,10 @@ export const Card = styled.div `
 }
 
 `
-export const CardBuy = styled.div `
+export const CardBuy = styled.div`
 
 `
-export const CounterDish = styled.div `
+export const CounterDish = styled.div`
 display: flex;
 width: 100px;
 height: 32px;

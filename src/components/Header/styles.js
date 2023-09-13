@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const Container = styled.header `
+export const Container = styled.header`
   display: flex;
   width: 100%;
   height: 114px;
@@ -12,6 +12,11 @@ export const Navbar = styled.div`
   align-items: center;
   justify-content: center;
   gap: 26px;
+
+  > a {
+    text-decoration: none;
+    
+  }
 
 
   img {
@@ -47,7 +52,7 @@ export const Navbar = styled.div`
     margin: 0 30px;
   }
 
-  >p {
+  >p, a {
     width: 130px;
     font-size: 21px;
     font-weight: 700;
@@ -55,7 +60,7 @@ export const Navbar = styled.div`
   }
   
   `
-export const Dot = styled.button `
+export const Dot = styled.button`
   display: flex;
   position: relative;
   min-width: 20px;

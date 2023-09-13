@@ -13,19 +13,22 @@ import salad from "../../assets/png/Salad.png";
 import plus from "../../assets/svg/Plus.svg";
 import minus from "../../assets/svg/Minus.svg";
 import { SmallButton } from "../../components/SmallButton";
+import { Link } from "react-router-dom";
 
 function DishCard(props) {
 	if (props.id == 1) {
 		return (
 			<DishDetails>
 				<Heading>
-					<img
-						id="arrow"
-						src={backSignal}
-						alt="return button to main page"
-						title="return"
-					/>
-					<span>return</span>
+					<Link to="/">
+						<img
+							id="arrow"
+							src={backSignal}
+							alt="return button to main page"
+							title="return"
+						/>
+						<span>return</span>
+					</Link>
 				</Heading>
 				<img src={salad} alt="Plate picture." />
 				<TextBox>
@@ -44,7 +47,7 @@ function DishCard(props) {
 						<img src={plus} alt="button to add dishes at your order" />
 					</CounterOrders>
 
-					<SmallButton id="order" title={` pedir • ${props.price}`} />
+					<SmallButton id="order" title={` order • ${props.price}`} />
 				</CounterOrders>
 			</DishDetails>
 		);

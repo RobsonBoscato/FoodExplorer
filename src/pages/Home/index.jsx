@@ -1,14 +1,6 @@
 import { Header } from "../../components/Header";
 import macaroon from "../../assets/png/macaroons.png";
-import {
-	Background,
-	Card,
-	Container,
-	Heading,
-	Session,
-	TextBox,
-	CardBuy,
-} from "./styles.js";
+import { Background, Container, Heading, Session, TextBox } from "./styles.js";
 import { Footer } from "../../components/Footer";
 import { plates } from "../mocks/plates";
 import PlateCard from "./PlateCard";
@@ -26,7 +18,7 @@ export function Home() {
 					<p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
 				</TextBox>
 			</Heading>
-      <p>Refeições</p>
+			<p>Appetizers</p>
 
 			<Session>
 				{plates.map((plate) => (
@@ -36,11 +28,11 @@ export function Home() {
 						picture={plate.picture}
 						description={plate.description}
 						price={plate.price}
-					/>      
+					/>
 				))}
 			</Session>
 
-      <p>Pratos principais</p>
+			<p> Main meals </p>
 			<Session>
 				{plates.map((plate) => (
 					<PlateCard
@@ -49,11 +41,10 @@ export function Home() {
 						picture={plate.picture}
 						description={plate.description}
 						price={plate.price}
-					/>       
+					/>
 				))}
-
 			</Session>
-      <p>Pratos principais</p>
+			<p>Desserts</p>
 			<Session>
 				{plates.map((plate) => (
 					<PlateCard
@@ -61,7 +52,7 @@ export function Home() {
 						id={plate.id}
 						picture={plate.picture}
 						description={plate.description}
-					/>               
+					/>
 				))}
 			</Session>
 

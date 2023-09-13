@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div `
+export const Container = styled.div`
   height: 100vh;
   width: 100%;
   margin: 0 auto;
@@ -9,10 +9,10 @@ export const Container = styled.div `
   align-items: center;
 
   flex-direction: column;
-  background-color: ${({ theme }) => theme.COLORS.BD_DARK_700 };
+  background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
 `
 
-export const Form = styled.form `
+export const Form = styled.form`
 
 display: flex;
 width: 100%;
@@ -40,10 +40,13 @@ background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
   line-height: 100%;
   color: ${({ theme }) => theme.COLORS.GRAY_400};
 }
-> strong {
+> a {
   margin-top: 32px;
   cursor: pointer;
   text-align: center;
+  text-decoration: none;
+  color: ${({ theme }) => theme.COLORS.GRAY_400};
+  
 }
 `
 

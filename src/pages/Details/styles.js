@@ -31,15 +31,17 @@ export const DishDetails = styled.div`
 export const Heading = styled.div`
 display: flex;
 
-> #arrow {
+> a {
   margin: 37px 0px 0px 40px;
+  text-decoration: none;
   
 }
 
-> span {
+> a {
   margin-top: 37px;
   display: inline-flex;
 
+  text-decoration: none;
   font-size: 24px;
   font-weight: 500;
   line-height: 140%;

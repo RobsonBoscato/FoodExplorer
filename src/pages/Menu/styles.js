@@ -8,6 +8,16 @@ export const Container = styled.div`
   align-items: flex-start;
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_400};
 `
+
+export const span = styled.div`
+  color: var(--light-light-300, #E1E1E6);
+  font-family: ${({ theme }) => theme.FONTS.POPPINS};
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 140%;
+`
+
 export const Heading = styled.div`
   display: flex;
   margin: 56px 28px 24px 28px;
@@ -28,16 +38,18 @@ export const Session = styled.div`
   align-items: flex-start;
   gap: 36px;
 
-  > span {
-    color: var(--light-light-300, #E1E1E6);
+  > a {
+
+    text-decoration: none;
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
     font-family: ${({ theme }) => theme.FONTS.POPPINS};
     font-size: 24px;
     font-style: normal;
     font-weight: 300;
     line-height: 140%;
   }
-
 `
+
 export const SearchInput = styled.div`
   display: flex;
   width: 100%;
