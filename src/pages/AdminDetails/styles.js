@@ -3,17 +3,13 @@ import styled from 'styled-components'
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_100}; 
 `
-
 export const Session = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
   
   align-items: center;
   justify-content: center;
   gap: 6px;
-
 `
-
 export const DishDetails = styled.div`
   display: flex;
   width: 100%;

@@ -2,25 +2,31 @@
 
 Food Explorer is a dynamic web application designed for both mobile and desktop devices, aimed at showcasing a fictitious restaurant's offerings. The application includes a landing page, shopping functionality, a login area, and more. It's built using HTML, CSS, JavaScript, React, Node.js, and utilizes Jest for testing purposes.
 
-## Features in development 
+## Features in development
 
-   - [  ] Home Page for mobile and desktop;
-   - [  ] User creation/login area (admin access);
-   - [  ] User profile, photo, e-mail and password update.
-   - [  ] Shopping cart, with CRUD products (Create, Read, Update and Delete)
-   - [  ] 
-   - [  ]
+- [x] Mobile support;
+- [ ]
+- [  ] Home Page for mobile and desktop;
+- [  ] User creation/login area (admin access);
+- [  ] User profile, photo, e-mail and password update.
+- [  ] Shopping cart, with CRUD products (Create, Read, Update and Delete)
+- [  ]
+- [  ]
 
 ## Installation
 
 1. **Clone the Repository:**
+
    ```
    git clone https://github.com/your-username/food-explorer.git
    ```
 
 2. **Install Vite:**
+
    ```
-   npm create vite@latest 
+   npm create vite@latest
+
+   ```
 
 3. **Navigate to the Project Directory:**
    ```
@@ -34,6 +40,7 @@ Food Explorer is a dynamic web application designed for both mobile and desktop 
 ## Usage
 
 1. **Start the Development Server:**
+
    ```
    npm run dev
    ```
@@ -64,16 +71,19 @@ We welcome contributions to the Food Explorer project! To contribute, follow the
 1. Fork the repository.
 
 2. Create a new branch for your feature or bug fix:
+
    ```
    git checkout -b feature-name
    ```
 
 3. Make your changes and commit them:
+
    ```
-   git commit -m "Add new feature" 
+   git commit -m "Add new feature"
    ```
 
 4. Push to your forked repository:
+
    ```
    git push origin feature-name
    ```

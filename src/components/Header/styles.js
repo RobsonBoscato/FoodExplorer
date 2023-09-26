@@ -14,10 +14,8 @@ export const Navbar = styled.div`
   gap: 26px;
 
   > a {
-    text-decoration: none;
-    
+    text-decoration: none;    
   }
-
 
   img {
     justify-content: center;
@@ -29,7 +27,6 @@ export const Navbar = styled.div`
     max-height: 32px;
     min-width: 26px;
     min-height: 26px;
-
     margin-left: 10px;
     margin: 0 30px;
   }
@@ -44,11 +41,9 @@ export const Navbar = styled.div`
   
   #menu {
     max-width: 24px;
-    max-height: 18px;
-    
+    max-height: 18px;   
     min-width: 20px;
     min-height: 14px;
-
     margin: 0 30px;
   }
 
