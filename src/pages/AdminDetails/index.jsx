@@ -1,6 +1,6 @@
 import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
-import DishCard from "../Details/DishDetails";
+import { AdminHeader } from "../../components/AdminHeader";
+import DishCard from "../Details/AdminDetails";
 import { Session } from "./styles";
 import { PlateDetails } from "../mocks/PlateDetails";
 import { Container } from "./styles";
@@ -8,7 +8,7 @@ import { Container } from "./styles";
 export function AdminDetails() {
 	return (
 		<Container>
-			<Header />
+			<AdminHeader />
 
 			<Session>
 				{PlateDetails.map((plate) => (

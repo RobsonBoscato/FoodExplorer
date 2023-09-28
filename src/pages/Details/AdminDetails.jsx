@@ -4,19 +4,15 @@ import {
 	Heading,
 	Tags,
 	TextBox,
-	CounterOrders,
 	Session,
 } from "./styles";
 
 import backSignal from "../../assets/svg/backSignal.svg";
 import salad from "../../assets/png/Salad.png";
-import plus from "../../assets/svg/Plus.svg";
-import minus from "../../assets/svg/Minus.svg";
-import { SmallButton } from "../../components/SmallButton";
+import { SmallButtonAdmin } from "../../components/SmallButton/SmallButtonAdmin.jsx";
 import { Link } from "react-router-dom";
 
 function DishCard(props) {
-	console.log(props);
 	if (props.id == 1) {
 		return (
 			<DishDetails>
@@ -40,16 +36,9 @@ function DishCard(props) {
 							<Tags key={tag}>{tag}</Tags>
 						))}
 					</Session>
-				</TextBox>
-				<CounterOrders>
-					<CounterOrders>
-						<img src={minus} alt="button to decrease the quantity at your order" />
-						<p>0</p>
-						<img src={plus} alt="button to add dishes at your order" />
-					</CounterOrders>
 
-					<SmallButton id="order" title={` order • ${props.price}`} />
-				</CounterOrders>
+					<SmallButtonAdmin title={"Edit Plate"} />
+				</TextBox>
 			</DishDetails>
 		);
 	}

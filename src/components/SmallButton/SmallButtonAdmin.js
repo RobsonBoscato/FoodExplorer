@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.button`
 	display: flex;
+	margin: 48px auto;
 	cursor: pointer;
-	margin: 0 auto;
-	width: 162px;
-	height: 32px;
+	width: 100%;
+	height: 48px;
 	padding: 12px 24px;
 
 	justify-content: center;
@@ -19,13 +19,4 @@ export const Container = styled.button`
 	border-radius: 5px;
 	border: 0;
 	background-color: ${({ theme }) => theme.COLORS.RED_100};
-	`;
-
-export const Heading = styled.div`
-display: flex;
-`
-
-export const EditionButton = styled.div`
-	margin: 0 auto;
-	font-size: 120px;
-`
+	`

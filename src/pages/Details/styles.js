@@ -11,7 +11,6 @@ export const Session = styled.div`
   align-items: center;
   justify-content: center;
   gap: 6px;
-
 `
 
 export const DishDetails = styled.div`
@@ -61,7 +60,6 @@ export const TextBox = styled.div`
   gap: 24px;
   color: ${({ theme }) => theme.COLORS.GRAY_300};
 
-
   > p {
     text-align: center;
     font-size: 27px;
@@ -80,7 +78,7 @@ export const Description = styled.div`
 export const Tags = styled.div`
 
   text-align: center;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 24px;
 
@@ -111,9 +109,4 @@ export const CounterOrders = styled.div`
   display: inline-flex;
   width: 1500px;
 }
-
-`
-export const ButtonOrder = styled.div`
-
-
 `
