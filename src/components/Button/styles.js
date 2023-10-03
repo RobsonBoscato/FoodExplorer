@@ -1,8 +1,19 @@
 import styled from "styled-components";
+import theme from '../../pages/Styles/theme'
+
+const variants = {
+	primary: {
+		display: 'flex',
+		background: theme.COLORS.RED_400,
+	},
+	secondary: {
+		background: theme.COLORS.GRAY_100
+	}
+}
 
 export const Container = styled.button`
 	cursor: pointer;
-	width: 100%;
+	width: ${(props) => variants[props.$variant]?.width ?? '100%'};
 	height: 48px;
 	padding: 12px 32px;
 
@@ -13,7 +24,7 @@ export const Container = styled.button`
 	border: 0;
 
 	border-radius: 5px;
-	background-color: ${({ theme }) => theme.COLORS.RED_100};
+	background-color: ${(props) => variants[props.$variant]?.background ?? theme.COLORS.RED_100};
 
 	color: ${({ theme }) => theme.COLORS.GRAY_100};
 	font-family: ${({ theme }) => theme.FONTS.POPPINS};

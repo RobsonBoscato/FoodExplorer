@@ -4,7 +4,16 @@ import Receipt from "../../assets/svg/Receipt.svg";
 import Menu from "../../assets/svg/Menu.svg";
 import { Link } from "react-router-dom";
 
+const MOCKUSER = {
+	name: "TESTE",
+	isAdmin: true,
+};
+
 export function Header() {
+	const isAdmin = (user) => {
+		return user.isAdmin;
+	};
+
 	return (
 		<Container>
 			<Navbar>
@@ -16,9 +25,14 @@ export function Header() {
 
 					<p>food explorer</p>
 				</Link>
-				<img id="receipt" src={Receipt} alt="shortcut for receipt details" />
-
-				<Dot>&nbsp;0</Dot>
+				{isAdmin(MOCKUSER) ? (
+					<span>admin</span>
+				) : (
+					<>
+						<img id="receipt" src={Receipt} alt="shortcut for receipt details" />
+						<Dot>&nbsp;0</Dot>
+					</>
+				)}
 			</Navbar>
 		</Container>
 	);

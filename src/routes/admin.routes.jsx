@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 
 import { Home } from "../pages/Home";
-import { Details } from "../pages/Details";
 import { Menu } from "../pages/Menu";
+import { Details } from "../pages/Details";
 import { AdminDetails } from "../pages/AdminDetails";
+import { NewPlate } from "../pages/NewPlate";
 
 export function AdminRoutes() {
 	return (
@@ -12,6 +13,7 @@ export function AdminRoutes() {
 			<Route path="/details/:id" element={<Details />} />
 			<Route path="/admin/:id" element={<AdminDetails />} />
 			<Route path="/menu" element={<Menu />} />
+			<Route path="/newplate" element={<NewPlate />} />
 		</Routes>
 	);
 }

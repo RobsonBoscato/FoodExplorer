@@ -51,8 +51,8 @@ display: flex;
   font-family: ${({ theme }) => theme.FONTS.POPPINS};
   color: ${({ theme }) => theme.COLORS.GRAY_300};
 }
-
 `
+
 export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
@@ -67,6 +67,7 @@ export const TextBox = styled.div`
     line-height: 140%;
   }
 `
+
 export const Description = styled.div`
   display: flex;
   text-align: center;
@@ -75,8 +76,8 @@ export const Description = styled.div`
   font-weight: 400;
   line-height: 140%;
 `
-export const Tags = styled.div`
 
+export const Tags = styled.div`
   text-align: center;
   font-size: 12px;
   font-weight: 500;
@@ -89,6 +90,7 @@ export const Tags = styled.div`
   gap: 8px;
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_1000};
 `
+
 export const OrderButton = styled.div`
   display: flex;
   align-items: center;
