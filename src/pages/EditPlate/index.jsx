@@ -1,13 +1,13 @@
 import { AdminHeader } from "../../components/AdminHeader";
 import { Footer } from "../../components/Footer";
-import { Container, Section, Form, Heading } from "./styles";
+import { Container, Section, Form, Heading, ButtonsBox } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 import Uploadimage from "../../assets/svg/UploadImage.svg";
 import { Link } from "react-router-dom";
 import backSignal from "../../assets/svg/backSignal.svg";
 
-export function NewPlate() {
+export function EditPlate() {
 	return (
 		<Container>
 			<AdminHeader />
@@ -22,7 +22,7 @@ export function NewPlate() {
 					/>
 					<span>return</span>
 				</Heading>
-				<p>New plate</p>
+				<p>Edit plate</p>
 				<Form>
 					<p>Plate image</p>
 					<label htmlFor="upload">
@@ -56,8 +56,10 @@ export function NewPlate() {
 						placeholder="Describe the dish, the ingredients and composition."
 						id="description"
 					></Input>
-
-					<Button title={"Save changes"} variant="primary"></Button>
+					<ButtonsBox id="#buttons">
+						<Button title={"Delete plate"} variant="secondary"></Button>
+						<Button title={"Save changes"} variant="primary"></Button>
+					</ButtonsBox>
 				</Form>
 			</Section>
 			<Footer />

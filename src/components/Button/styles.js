@@ -5,9 +5,12 @@ const variants = {
 	primary: {
 		display: 'flex',
 		background: theme.COLORS.RED_400,
+		width: '50%'
 	},
 	secondary: {
-		background: theme.COLORS.GRAY_100
+		display: 'flex',
+		background: theme.COLORS.BD_DARK_800,
+		width: '50%'
 	}
 }
 

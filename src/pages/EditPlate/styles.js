@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
+background-color: ${({ theme }) => theme.COLORS.BD_DARK_400}; 
 `
 
 export const Section = styled.div`
@@ -12,7 +12,6 @@ justify-content: center;
 gap: 26px;
 
 padding: 0px 47px 0px;
-background-color: ${({ theme }) => theme.COLORS.BD_DARK_700}; 
 
 > p {
   display: flex;
@@ -51,8 +50,6 @@ flex-direction: column;
 justify-content: center;
 gap: 26px;
 
-background-color: ${({ theme }) => theme.COLORS.BD_DARK_700}; 
-
 > select {
   font-family: Roboto;
   width: 100%;
@@ -60,7 +57,7 @@ background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
   
   border: 0; 
   
-  color: ${({ theme }) => theme.COLORS.GRAY_500};
+  color: ${({ theme }) => theme.COLORS.GRAY_400};
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_900}; 
   border-radius: 8px;
 }
@@ -83,6 +80,7 @@ background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
   > img {
    padding-left: 20px;
   }
+
 }
 label :first-child {
    font-family: Roboto;
@@ -110,6 +108,11 @@ label :first-child {
     text-align: start;
   }
  }
+ 
+`
 
+export const ButtonsBox = styled.div`
+  display: flex;
+  gap: 30px;
  
 `
