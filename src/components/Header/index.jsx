@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const MOCKUSER = {
 	name: "TESTE",
-	isAdmin: true,
+	isAdmin: false,
 };
 
 export function Header() {

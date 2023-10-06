@@ -3,23 +3,31 @@ export const Container = styled.header`
   display: flex;
   width: 100%;
   height: 114px;
+  justify-content: center;
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_1000};
-  `
+`
 
 export const Navbar = styled.div`
   display: flex;
-  width: 100%;
+  gap: 8px;
   align-items: center;
   justify-content: center;
-  gap: 26px;
 
   > a {
     text-decoration: none;    
+    display: flex;
   }
 
   img {
     justify-content: center;
     align-items: center;
+  }
+  > span {
+    font-size: 12px;
+    font-weight: 400;
+
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO};
+    color: ${({ theme }) => theme.COLORS.AQUA_200};
   }
 
   #receipt {
@@ -28,7 +36,6 @@ export const Navbar = styled.div`
     min-width: 26px;
     min-height: 26px;
     margin-left: 10px;
-    margin: 0 30px;
   }
   
   #polygon {
@@ -36,7 +43,7 @@ export const Navbar = styled.div`
     max-height: 24px;
     min-width: 20px;
     min-height: 20px;
-    margin-right: -12px;
+    margin: 0 10px 0 50px;
   }
   
   #menu {
@@ -44,11 +51,10 @@ export const Navbar = styled.div`
     max-height: 18px;   
     min-width: 20px;
     min-height: 14px;
-    margin: 0 30px;
+    margin-left: 3px;
   }
 
   >p, a {
-    width: 130px;
     font-size: 21px;
     font-weight: 700;
     color: ${({ theme }) => theme.COLORS.GRAY_100};
@@ -63,7 +69,7 @@ export const Dot = styled.button`
   
   border: 0;
   top: -12px;
-  right: 70px;  
+  right: 22px;  
   border-radius: 100%;
   
   font-size: 14px;

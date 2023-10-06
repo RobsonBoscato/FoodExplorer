@@ -54,7 +54,6 @@ gap: 26px;
   font-family: Roboto;
   width: 100%;
   height: 48px;
-  
   border: 0; 
   
   color: ${({ theme }) => theme.COLORS.GRAY_400};
@@ -62,12 +61,10 @@ gap: 26px;
   border-radius: 8px;
 }
 
-
 > label, p {
   font-family: Roboto;
   width: 100%;
   margin-bottom: -12px;
-  
   border: 0; 
   
   color: ${({ theme }) => theme.COLORS.GRAY_100};
@@ -83,10 +80,12 @@ gap: 26px;
 
 }
 label :first-child {
+  display: flex;
+  align-items: center;
    font-family: Roboto;
+   font-size: 14px;
    width: 100%;
    height: 48px;
-   
    border: 0;
    padding: 12px 62px;    
    margin-bottom: -40px;
@@ -108,7 +107,6 @@ label :first-child {
     text-align: start;
   }
  }
- 
 `
 
 export const ButtonsBox = styled.div`

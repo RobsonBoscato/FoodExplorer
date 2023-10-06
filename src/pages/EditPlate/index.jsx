@@ -1,4 +1,4 @@
-import { AdminHeader } from "../../components/AdminHeader";
+import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Container, Section, Form, Heading, ButtonsBox } from "./styles";
 import { Input } from "../../components/Input";
@@ -10,7 +10,7 @@ import backSignal from "../../assets/svg/backSignal.svg";
 export function EditPlate() {
 	return (
 		<Container>
-			<AdminHeader />
+			<Header />
 			<Section>
 				<Heading>
 					<Link to="/" />
@@ -27,7 +27,7 @@ export function EditPlate() {
 					<p>Plate image</p>
 					<label htmlFor="upload">
 						{" "}
-						<p>Select an image to upload</p>
+						<p>Select an image</p>
 						<img src={Uploadimage} alt="upload arrow" />
 						<input id="upload" type="file" />
 					</label>
