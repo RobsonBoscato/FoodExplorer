@@ -3,9 +3,22 @@ import { Container, Navbar, SearchInput, Session, Heading } from "./styles";
 import close from "../../assets/svg/close.svg";
 import { Input } from "../../components/Input";
 import { FiSearch } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { profileRole } from "../../components/Header";
+import { useAuth } from "../../hooks/auth";
 
 export function Menu() {
+	const { signOut } = useAuth();
+	const navigation = useNavigate();
+
+	function handleSignOut() {
+		signOut();
+		navigation("/");
+	}
+
+	let profile = profileRole();
+
 	return (
 		<Container>
 			<Navbar>
@@ -27,8 +40,22 @@ export function Menu() {
 					icon={FiSearch}
 					placeholder="Search for appetizers, meals or ingredients"
 				/>
+				{profile == "admin" ? (
+					<Link to="/newplate">
+						<span id="leave">Create a new plate</span>
+					</Link>
+				) : (
+					<></>
+				)}
 				<Link to="/">
-					<span id="leave">Leave</span>
+					<span id="leave">Close Menu</span>
+				</Link>
+				<br />
+				<br />
+				<Link to="/">
+					<span id="signOut" onClick={handleSignOut}>
+						Sign Out
+					</span>
 				</Link>
 			</Session>
 

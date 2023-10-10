@@ -24,6 +24,26 @@ background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
 }
 `
 
+export const SectionTags = styled.div`
+
+display: grid;
+grid-template-rows: repeat(3, 1fr);
+grid-template-columns: repeat(3, 1fr);
+gap: 10px;
+width: 100%;
+
+background-color: ${({ theme }) => theme.COLORS.BD_DARK_700}; 
+
+> p {
+  display: flex;
+  font-size: 50px;
+  height: 45px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+
+}
+`
+
 export const Heading = styled.div`
 
 display: flex;
@@ -40,6 +60,12 @@ color: ${({ theme }) => theme.COLORS.GRAY_300};
 > img {
   width: 20px;
   height: 20px;
+}
+
+> a {
+  display: flex;
+  width: 22px;
+  height: 22px;
 }
 `
 
@@ -81,7 +107,7 @@ background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
   }
 
   > img {
-   padding-left: 20px;
+    padding-left: 20px;
   }
 }
 label :first-child {

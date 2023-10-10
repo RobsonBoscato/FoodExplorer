@@ -11,8 +11,10 @@ function PlateCard(props) {
 			<img
 				id="button-like"
 				src={emptyLike}
-				alt="empty heart, click to like a dish"
+				alt="empty heart, click to like and favorite a dish"
+				// onClick={}
 			/>
+
 			<img src={props.picture} alt="picture of a Salad Plate" />
 			<Link to="/details/1">
 				<p>{props.description}</p>

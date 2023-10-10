@@ -4,15 +4,22 @@ import Receipt from "../../assets/svg/Receipt.svg";
 import Menu from "../../assets/svg/Menu.svg";
 import { Link } from "react-router-dom";
 
-const MOCKUSER = {
-	name: "TESTE",
-	isAdmin: false,
-};
+import { useAuth } from "../../hooks/auth";
+
+let profile;
+function profileRole() {
+	const { user } = useAuth();
+	if (user.role === "admin") {
+		profile = "admin";
+		return user.role;
+	} else {
+		profile = "customer";
+		return user.role;
+	}
+}
 
 export function Header() {
-	const isAdmin = (user) => {
-		return user.isAdmin;
-	};
+	profileRole();
 
 	return (
 		<Container>
@@ -25,7 +32,8 @@ export function Header() {
 
 					<p>food explorer</p>
 				</Link>
-				{isAdmin(MOCKUSER) ? (
+
+				{profile == "admin" ? (
 					<span>admin</span>
 				) : (
 					<>
@@ -37,3 +45,5 @@ export function Header() {
 		</Container>
 	);
 }
+
+export { profileRole };

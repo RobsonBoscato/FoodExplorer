@@ -9,7 +9,6 @@ export function Details() {
 	return (
 		<Container>
 			<Header />
-
 			<Session>
 				{PlateDetails.map((plate) => (
 					<DishCard
@@ -22,7 +21,6 @@ export function Details() {
 					/>
 				))}
 			</Session>
-
 			<Footer />
 		</Container>
 	);

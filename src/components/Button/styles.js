@@ -5,7 +5,7 @@ const variants = {
 	primary: {
 		display: 'flex',
 		background: theme.COLORS.RED_400,
-		width: '50%'
+		width: '100%'
 	},
 	secondary: {
 		display: 'flex',
