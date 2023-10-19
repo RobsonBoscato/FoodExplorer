@@ -5,10 +5,9 @@ Food Explorer is a dynamic web application designed for both mobile and desktop 
 ## Features in development
 
 - [x] Mobile support;
-- [ ]
+- [x] Create and customize dishes;
 - [  ] Home Page for mobile and desktop;
-- [  ] User creation/login area (admin access);
-- [  ] User profile, photo, e-mail and password update.
+- [x] User creation/login area (admin access);
 - [  ] Shopping cart, with CRUD products (Create, Read, Update and Delete)
 - [  ]
 - [  ]

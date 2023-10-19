@@ -19,6 +19,8 @@ export const Container = styled.button`
 	border-radius: 5px;
 	border: 0;
 	background-color: ${({ theme }) => theme.COLORS.RED_100};
+
+	
 	`;
 
 export const Heading = styled.div`
@@ -27,5 +29,6 @@ display: flex;
 
 export const EditionButton = styled.div`
 	margin: 0 auto;
-	font-size: 120px;
+	font-size: 12px;
 `
+

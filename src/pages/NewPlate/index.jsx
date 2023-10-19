@@ -7,23 +7,55 @@ import { TagItem } from "../../components/TagItem";
 import Uploadimage from "../../assets/svg/UploadImage.svg";
 import { Link } from "react-router-dom";
 import backSignal from "../../assets/svg/backSignal.svg";
+import { useNavigate } from "react-router-dom";
 
+import { api } from "../../services/api";
 import { useState } from "react";
 
 export function NewPlate() {
+	const navigation = useNavigate();
 	// const [image, setImage] = useState("");
-	// const [title, setTitle] = useState("");
-	// const [category, setCategory] = useState("");
-	// const [price, setPrice] = useState("");
-	// const [description, setDescription] = useState("");
+	const [category, setCategory] = useState("");
+	const [price, setPrice] = useState("");
+
+	const [title, setTitle] = useState("");
+	const [description, setDescription] = useState("");
 
 	const [tags, setTags] = useState([]);
 	const [newTag, setNewTag] = useState("");
 
 	function handleAddTag() {
 		setTags((prevState) => [...prevState, newTag]);
-		console.log(newTag);
 		setNewTag("");
+	}
+	function handleRemoveTag(tagDeleted) {
+		setTags((prevState) => prevState.filter((tag) => tag !== tagDeleted));
+	}
+
+	async function handleNewPlate() {
+		if (!title) {
+			return alert("You should add a name for the plate, before saving.");
+		}
+		if (newTag) {
+			return alert(
+				"There's a tag pending to addition, delete or add it to proceed."
+			);
+		}
+		if (!price) {
+			return alert("To save, you should add a price for the meal.");
+		}
+
+		await api.post("/plates", {
+			title,
+			category,
+			price,
+			description,
+			tags,
+		});
+
+		alert("New Plate sucessfully created!");
+
+		navigation("/");
 	}
 
 	return (
@@ -61,7 +93,7 @@ export function NewPlate() {
 					<p>Category</p>
 					<select name="Category" onChange={(e) => setCategory(e.target.value)}>
 						<option name="Appetizers">Appetizers</option>
-						<option name="Meals">Meals</option>
+						<option name="Main meals">Main meals</option>
 						<option name="Desserts">Desserts</option>
 					</select>
 
@@ -69,13 +101,18 @@ export function NewPlate() {
 
 					<SectionTags>
 						{tags.map((tag, index) => (
-							<TagItem key={String(index)} value={tag} onClick={() => {}} />
+							<TagItem
+								key={String(index)}
+								value={tag}
+								onClick={() => handleRemoveTag(tag)}
+							/>
 						))}
 
 						<TagItem
 							isNew
 							placeholder="Addition"
 							onChange={(e) => setNewTag(e.target.value)}
+							value={newTag}
 							onClick={handleAddTag}
 						/>
 					</SectionTags>
@@ -94,7 +131,11 @@ export function NewPlate() {
 						id="description"
 						onChange={(e) => setDescription(e.target.value)}
 					></Input>
-					<Button title={"Save changes"} variant="primary"></Button>
+					<Button
+						title={"Save changes"}
+						variant="primary"
+						onClick={handleNewPlate}
+					></Button>
 				</Form>
 			</Section>
 			<Footer />

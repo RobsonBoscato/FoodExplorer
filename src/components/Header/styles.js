@@ -16,6 +16,7 @@ export const Navbar = styled.div`
   > a {
     text-decoration: none;    
     display: flex;
+    align-items: center;
   }
 
   img {

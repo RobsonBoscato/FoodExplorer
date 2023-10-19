@@ -18,12 +18,14 @@ export const Container = styled.div`
   }
 
   .button-delete {
+    display: flex;
     color: ${({ theme }) => theme.COLORS.GRAY_100};
     padding-right: 10px;
   }
   
   .button-add {
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
+    display: flex;
+    color: ${({ theme }) => theme.COLORS.GRAY_500};
     padding-right: 10px;
   }
 

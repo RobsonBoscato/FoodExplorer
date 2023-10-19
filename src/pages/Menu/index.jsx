@@ -5,8 +5,7 @@ import { Input } from "../../components/Input";
 import { FiSearch } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 
-import { profileRole } from "../../components/Header";
-import { useAuth } from "../../hooks/auth";
+import { isAdmin, useAuth } from "../../hooks/auth";
 
 export function Menu() {
 	const { signOut } = useAuth();
@@ -16,8 +15,6 @@ export function Menu() {
 		signOut();
 		navigation("/");
 	}
-
-	let profile = profileRole();
 
 	return (
 		<Container>
@@ -40,7 +37,7 @@ export function Menu() {
 					icon={FiSearch}
 					placeholder="Search for appetizers, meals or ingredients"
 				/>
-				{profile == "admin" ? (
+				{isAdmin() ? (
 					<Link to="/newplate">
 						<span id="leave">Create a new plate</span>
 					</Link>
@@ -58,7 +55,6 @@ export function Menu() {
 					</span>
 				</Link>
 			</Session>
-
 			<Footer />
 		</Container>
 	);

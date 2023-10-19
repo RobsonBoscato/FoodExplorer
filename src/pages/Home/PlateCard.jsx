@@ -3,9 +3,11 @@ import { Card, CardBuy, CounterDish } from "./styles.js";
 import plus from "../../assets/svg/Plus.svg";
 import minus from "../../assets/svg/Minus.svg";
 import emptyLike from "../../assets/svg/EmptyHeart.svg";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function PlateCard(props) {
+	const navigate = useNavigate();
+
 	return (
 		<Card>
 			<img
@@ -14,12 +16,22 @@ function PlateCard(props) {
 				alt="empty heart, click to like and favorite a dish"
 				// onClick={}
 			/>
+			<a onClick={() => navigate(`/plates/${props.id}`)}>
+				<img
+					src={`http://localhost:3333/files/${props.image}`}
+					onError={({ currentTarget }) => {
+						currentTarget.onerror = null; // prevents looping
+						currentTarget.src =
+							"https://avatars.steamstatic.com/b5bd56c1aa4644a474a2e4972be27ef9e82e517e_full.jpg";
+						// alt = `picture of the plate ${props.title}`;
+					}}
+				/>
 
-			<img src={props.picture} alt="picture of a Salad Plate" />
-			<Link to="/details/1">
 				<p>{props.description}</p>
-			</Link>
+			</a>
+
 			<span> R$ {props.price}</span>
+
 			<CardBuy />
 
 			<CounterDish>
@@ -28,7 +40,7 @@ function PlateCard(props) {
 				<img src={minus} alt="button to decrease the quantity at your order" />
 			</CounterDish>
 
-			<SmallButton title={"Incluir"} />
+			<SmallButton title={"Addition"} />
 		</Card>
 	);
 }

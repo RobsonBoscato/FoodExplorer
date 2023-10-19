@@ -12,7 +12,6 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
   
   > p {
-    margin-top: 70px;
     padding: 5%;
     font-size: 18px;
     font-weight: 500;
@@ -29,7 +28,7 @@ export const Background = styled.div`
   
   flex: 1;
   
-  background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
+  background-color: ${({ theme }) => theme.COLORS.BD_DARK_900};
   
   > svg {
     min-width: 49px;
@@ -42,7 +41,6 @@ export const Background = styled.div`
     font-weight: 700;
 
     font-family: ${({ theme }) => theme.FONTS.ROBOTO};
-    color: ${({ theme }) => theme.COLORS.orange};
   }
 `
 export const Heading = styled.div`
@@ -83,40 +81,57 @@ export const TextBox = styled.div`
 
 `
 export const Session = styled.div`
-  margin-top: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-`
+  
+  margin-top: 24px;
+  padding: 24px;
+  gap: 12px;
+
+  
+  `
 export const Card = styled.div`
   display: flex;
   width: 210px;
-  height: 292px;
+  height: 400px;
   padding: 24px;
   gap: 12px;
   
   flex-direction: column;
   align-items: center;
+  background: ${({ theme }) => theme.COLORS.BD_DARK_200};
 
-> img {
-  width: 88px;
-  height: 88px;
-}
+  
+  > a {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    
+    padding: 10px;
+    min-height: 70px;
+    clip-path: inset(0% 0% 5px 0px);
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; 
 
-> a {
-  padding: 10px;
-  min-height: 70px;
-  clip-path: inset(0% 0% 5px 0px);
-  text-align: center;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 24px; 
+    text-decoration: none;
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
+    font-family: ${({ theme }) => theme.FONTS.POPPINS};
+  
+  > img {
+    width: 88px;
+    height: 88px;
+  }
 
-  text-decoration: none;
-  color: ${({ theme }) => theme.COLORS.GRAY_300};
-  font-family: ${({ theme }) => theme.FONTS.POPPINS};
+  > p {
+    min-height: 80px;
+  }
+  
+
 }
 
 > span {

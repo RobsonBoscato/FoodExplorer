@@ -2,6 +2,43 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_100}; 
+  font-family: ${({ theme }) => theme.FONTS.POPPINS};
+
+  
+  #imgCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    > img {
+      display: flex;
+      width: 260px;;
+      height: 260px;
+
+    }
+    
+  #button-wrapper {
+      width: 100%;
+  }
+  #button-wrapped {
+    margin-top: 40px;
+      width: 100%;
+      height: 48px;
+  }
+    
+}
+
+#tagsBox {
+  background-color: ${({ theme }) => theme.COLORS.BD_DARK_100};
+}
+
+
+> img {
+  #return {
+    color: yellow;
+  }
+}
+
 `
 
 export const Session = styled.div`
@@ -18,7 +55,6 @@ export const DishDetails = styled.div`
   width: 100%;
   height: 100vh;
   flex-direction: column;
-  font-family: ${({ theme }) => theme.FONTS.POPPINS};
 
 > img {
     display: flex;
@@ -31,32 +67,32 @@ export const DishDetails = styled.div`
 
 `
 export const Heading = styled.div`
-display: flex;
 
-> a {
-  margin: 37px 0px 0px 40px;
-  text-decoration: none;
-  
+display: flex;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+padding: 5%;
+
+
+color: ${({ theme }) => theme.COLORS.GRAY_300};
+
+> img {
+  width: 20px;
+  height: 20px;
 }
 
 > a {
-  margin-top: 37px;
-  display: inline-flex;
-
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 140%;
-
-  font-family: ${({ theme }) => theme.FONTS.POPPINS};
-  color: ${({ theme }) => theme.COLORS.GRAY_300};
+  display: flex;
+  width: 36px;
+  height: 36px;
 }
 `
 
 export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
+  padding: 20px;
   gap: 24px;
   color: ${({ theme }) => theme.COLORS.GRAY_300};
 
@@ -79,16 +115,19 @@ export const Description = styled.div`
 
 export const Tags = styled.div`
   text-align: center;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 24px;
 
   display: inline-flex;
+  justify-content: space-around;
   padding: 4px 8px;
   justify-content: center;
   align-items: center;
   gap: 8px;
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_1000};
+
+  border-radius: 5px;
 `
 
 export const OrderButton = styled.div`

@@ -4,23 +4,9 @@ import Receipt from "../../assets/svg/Receipt.svg";
 import Menu from "../../assets/svg/Menu.svg";
 import { Link } from "react-router-dom";
 
-import { useAuth } from "../../hooks/auth";
-
-let profile;
-function profileRole() {
-	const { user } = useAuth();
-	if (user.role === "admin") {
-		profile = "admin";
-		return user.role;
-	} else {
-		profile = "customer";
-		return user.role;
-	}
-}
+import { isAdmin } from "../../hooks/auth";
 
 export function Header() {
-	profileRole();
-
 	return (
 		<Container>
 			<Navbar>
@@ -33,7 +19,7 @@ export function Header() {
 					<p>food explorer</p>
 				</Link>
 
-				{profile == "admin" ? (
+				{isAdmin() ? (
 					<span>admin</span>
 				) : (
 					<>
@@ -45,5 +31,3 @@ export function Header() {
 		</Container>
 	);
 }
-
-export { profileRole };

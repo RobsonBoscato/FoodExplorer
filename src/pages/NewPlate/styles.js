@@ -27,7 +27,7 @@ background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
 export const SectionTags = styled.div`
 
 display: grid;
-grid-template-rows: repeat(3, 1fr);
+grid-template-rows: repeat(1, 1fr);
 grid-template-columns: repeat(3, 1fr);
 gap: 10px;
 width: 100%;
@@ -50,7 +50,7 @@ display: flex;
 font-size: 16px;
 font-style: normal;
 font-weight: 500;
-line-height: 140%; 
+padding-left: 5%;
 
 padding-top: 12px;
 

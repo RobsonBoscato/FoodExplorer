@@ -16,6 +16,7 @@ import { SmallButton } from "../../components/SmallButton";
 import { Link } from "react-router-dom";
 
 function DishCard(props) {
+	console.log("DishDetails.jsx");
 	if (props.id == 1) {
 		return (
 			<DishDetails>

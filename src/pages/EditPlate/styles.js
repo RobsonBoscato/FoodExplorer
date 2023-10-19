@@ -29,7 +29,7 @@ display: flex;
 font-size: 16px;
 font-style: normal;
 font-weight: 500;
-line-height: 140%; 
+padding-left: 5%;
 
 padding-top: 12px;
 

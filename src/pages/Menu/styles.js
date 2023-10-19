@@ -15,13 +15,11 @@ export const span = styled.div`
   font-size: 24px;
   font-style: normal;
   font-weight: 300;
-  line-height: 140%;
 `
 
 export const Heading = styled.div`
   display: flex;
   margin: 56px 28px 24px 28px;
-  width: 100%;
   align-items: center;
   gap: 16px;
 
@@ -34,6 +32,7 @@ export const Session = styled.div`
   display: flex;
   padding: 30px;
   width: 100%;
+  height: 100vh;
   flex-direction: column;
   align-items: flex-start;
   gap: 36px;
@@ -46,7 +45,6 @@ export const Session = styled.div`
     font-size: 24px;
     font-style: normal;
     font-weight: 300;
-    line-height: 140%;
   }
 `
 
@@ -57,8 +55,6 @@ export const SearchInput = styled.div`
   border-radius: 8px;
   `
 export const Navbar = styled.nav`
-  width: 428px;
-  height: 114px;
   font-size: 21px;
   flex-shrink: 0;
   

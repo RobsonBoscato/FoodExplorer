@@ -78,4 +78,9 @@ function useAuth() {
 	return context;
 }
 
-export { AuthProvider, useAuth };
+function isAdmin() {
+	const { user } = useAuth();
+	return user.role === "admin";
+}
+
+export { AuthProvider, useAuth, isAdmin };
