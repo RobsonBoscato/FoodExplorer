@@ -3,19 +3,28 @@ import { Card, CardBuy, CounterDish } from "./styles.js";
 import plus from "../../assets/svg/Plus.svg";
 import minus from "../../assets/svg/Minus.svg";
 import emptyLike from "../../assets/svg/EmptyHeart.svg";
+import Pencil from "../../assets/svg/Pencil.svg";
 import { useNavigate } from "react-router-dom";
+import { isAdmin } from "../../hooks/auth.jsx";
 
 function PlateCard(props) {
 	const navigate = useNavigate();
 
 	return (
 		<Card>
-			<img
-				id="button-like"
-				src={emptyLike}
-				alt="empty heart, click to like and favorite a dish"
-				// onClick={}
-			/>
+			{isAdmin ? (
+				<img
+					id="button-like"
+					src={Pencil}
+					alt="empty heart, click to like and favorite a dish"
+				/>
+			) : (
+				<img
+					id="button-like"
+					src={emptyLike}
+					alt="empty heart, click to like and favorite a dish"
+				/>
+			)}
 			<a onClick={() => navigate(`/plates/${props.id}`)}>
 				<img
 					src={`http://localhost:3333/files/${props.image}`}
@@ -40,7 +49,7 @@ function PlateCard(props) {
 				<img src={minus} alt="button to decrease the quantity at your order" />
 			</CounterDish>
 
-			<SmallButton title={"Addition"} />
+			<SmallButton title={"Add to cart"} />
 		</Card>
 	);
 }

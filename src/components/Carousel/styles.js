@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: fit-content;
-  margin: 0 auto;
 
   display: flex;
   flex-direction: column;
@@ -18,10 +17,9 @@ export const Container = styled.div`
 
   .carousel {
     max-width: 37.2rem;
+    overflow: hidden;
 
     cursor: grab;
-
-    overflow-x: hidden;
   }
 
   .slider {

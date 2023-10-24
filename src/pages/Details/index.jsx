@@ -94,7 +94,9 @@ export function DishDetails() {
 								</TextBox>
 								<div id="button-wrapper">
 									{isAdmin() ? (
-										<SmallButton id="button-wrapped" title={"Edit plate"}></SmallButton>
+										<Link to="/">
+											<SmallButton id="button-wrapped" title={"Edit plate"}></SmallButton>
+										</Link>
 									) : (
 										<CounterOrders>
 											<img

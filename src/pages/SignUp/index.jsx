@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { api } from "../../services/api";
-import { Background, Container, Form } from "../SignUp/styles";
+import { Background, Container } from "../SignUp/styles";
 import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import polygon from "../../assets/svg/Polygon.svg";
@@ -33,41 +33,43 @@ export function SignUp() {
 	}
 	return (
 		<Container>
-			<Background>
-				<img src={polygon} alt="blue polygon logo for FoodExplorer" />
-				<p>food explorer</p>
-			</Background>
+			<main>
+				<Background>
+					<img src={polygon} alt="blue polygon logo for FoodExplorer" />
+					<p>food explorer</p>
+				</Background>
 
-			<Form>
-				{/* <h1>Create your account</h1> */}
+				<form>
+					<h1>Create your account</h1>
 
-				<span>Your name</span>
-				<Input
-					placeholder="Example: Michael Scotfield"
-					type="text"
-					onChange={(e) => setName(e.target.value)}
-				/>
+					<span>Your name</span>
+					<Input
+						placeholder="Example: Michael Scotfield"
+						type="text"
+						onChange={(e) => setName(e.target.value)}
+					/>
 
-				<span>E-mail</span>
-				<Input
-					placeholder="Example: example@mail.com"
-					type="e-mail"
-					onChange={(e) => setEmail(e.target.value)}
-				/>
+					<span>E-mail</span>
+					<Input
+						placeholder="Example: example@mail.com"
+						type="e-mail"
+						onChange={(e) => setEmail(e.target.value)}
+					/>
 
-				<span>Password</span>
-				<Input
-					placeholder="Minimum of 6 characters"
-					type="password"
-					onChange={(e) => setPassword(e.target.value)}
-				/>
+					<span>Password</span>
+					<Input
+						placeholder="Minimum of 6 characters"
+						type="password"
+						onChange={(e) => setPassword(e.target.value)}
+					/>
 
-				<Button onClick={handleSignUp} title="Create new account" />
+					<Button onClick={handleSignUp} title="Create new account" />
 
-				<Link to="/">
-					<strong>Already have an account ?</strong>
-				</Link>
-			</Form>
+					<Link to="/">
+						<strong>Already have an account ?</strong>
+					</Link>
+				</form>
+			</main>
 		</Container>
 	);
 }

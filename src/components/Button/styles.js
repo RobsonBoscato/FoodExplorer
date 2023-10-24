@@ -17,10 +17,11 @@ const variants = {
 export const Container = styled.button`
 	cursor: pointer;
 	width: ${(props) => variants[props.$variant]?.width ?? '100%'};
-	height: 48px;
+	/* max-width: 220px; */
+	height: 56px;
 	padding: 12px 32px;
 
-	font-size: 14px;
+	font-size: 18px;
 	line-height: 12px;
 	font-weight: 500;
 	margin: 32px 0px;

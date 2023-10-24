@@ -14,7 +14,9 @@ import { useState } from "react";
 
 export function NewPlate() {
 	const navigation = useNavigate();
-	// const [image, setImage] = useState("");
+
+	const [image, setImage] = useState("");
+
 	const [category, setCategory] = useState("");
 	const [price, setPrice] = useState("");
 
@@ -33,6 +35,8 @@ export function NewPlate() {
 	}
 
 	async function handleNewPlate() {
+		const plateForm = new FormData();
+
 		if (!title) {
 			return alert("You should add a name for the plate, before saving.");
 		}
@@ -41,21 +45,41 @@ export function NewPlate() {
 				"There's a tag pending to addition, delete or add it to proceed."
 			);
 		}
+		if (tags.length < 1) {
+			return alert("You should add at least two tags to the plate");
+		}
+		console.log(tags);
+
 		if (!price) {
 			return alert("To save, you should add a price for the meal.");
 		}
+		if (!category) {
+			return alert("To save, you should select a category for the dish.");
+		}
 
-		await api.post("/plates", {
-			title,
-			category,
-			price,
-			description,
-			tags,
-		});
+		if (!description) {
+			return alert(
+				"It's important to have a description, that's what will display to the client."
+			);
+		}
 
-		alert("New Plate sucessfully created!");
+		plateForm.append("title", title);
+		plateForm.append("category", category);
+		plateForm.append("price", price);
+		plateForm.append("description", description);
+		plateForm.append("image", image);
+		tags.map((tag) => plateForm.append("tags", tag));
 
-		navigation("/");
+		try {
+			const response = await api.post("/plates", plateForm);
+			alert(response.data);
+			return navigation("/");
+		} catch (error) {
+			if (error.response) {
+				alert(error.response.data.message);
+			}
+			alert("An error occurred while creating the new plate. Please try again");
+		}
 	}
 
 	return (
@@ -76,14 +100,21 @@ export function NewPlate() {
 				<p>New plate</p>
 				<Form>
 					<p>Plate image</p>
+
 					<label htmlFor="upload">
 						<p>Select an image to upload</p>
 						<img src={Uploadimage} alt="upload arrow" />
-						<input id="upload" type="file" />
+						{image.name ? image.name : image}
+						<input
+							type="file"
+							name="image"
+							id="upload"
+							onChange={(e) => setImage(e.target.files[0])}
+						/>
 					</label>
-					<label id="second" htmlFor="name">
-						Name{" "}
-					</label>
+
+					<label id="second" htmlFor="name"></label>
+
 					<Input
 						type="text"
 						placeholder="Ex.: Ceasar Salad"
@@ -92,8 +123,9 @@ export function NewPlate() {
 					></Input>
 					<p>Category</p>
 					<select name="Category" onChange={(e) => setCategory(e.target.value)}>
+						<option name="default">Select a category</option>
 						<option name="Appetizers">Appetizers</option>
-						<option name="Main meals">Main meals</option>
+						<option name="Meals">Main meals</option>
 						<option name="Desserts">Desserts</option>
 					</select>
 
@@ -137,8 +169,8 @@ export function NewPlate() {
 						onClick={handleNewPlate}
 					></Button>
 				</Form>
+				<Footer />
 			</Section>
-			<Footer />
 		</Container>
 	);
 }

@@ -19,7 +19,6 @@ padding: 0px 47px 0px;
   height: 45px;
   align-items: flex-start;
   margin-bottom: 20px;
-
 }
 `
 
@@ -112,5 +111,4 @@ label :first-child {
 export const ButtonsBox = styled.div`
   display: flex;
   gap: 30px;
- 
-`
+  `

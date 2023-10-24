@@ -7,16 +7,21 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { DishCarousel } from "../../components/Carousel";
 
-export function Home() {
+import { useSearch } from "../../hooks/search";
+
+export function Home({ admin }) {
 	const [plates, setPlates] = useState([]);
+	const { search } = useSearch();
 
 	useEffect(() => {
 		async function fetchPlates() {
-			const response = await api.get("/plates");
+			const response = await api.get(`/plates?title=${search}`);
+
 			setPlates(Object.values(response.data));
 		}
+
 		fetchPlates();
-	}, []);
+	}, [search]);
 
 	return (
 		<Container>
@@ -32,7 +37,7 @@ export function Home() {
 			</Heading>
 
 			<Session>
-				{plates.filter((plate) => plate.category === "Appetizers").length > 0 && (
+				{plates?.filter((plate) => plate.category === "Appetizers").length > 0 && (
 					<DishCarousel title={"Appetizers"}>
 						{plates ? (
 							plates

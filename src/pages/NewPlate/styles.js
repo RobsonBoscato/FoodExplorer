@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 
+#footbox {
+  margin: 0;
+}
+
 `
 
 export const Section = styled.div`

@@ -1,5 +1,4 @@
 import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
 import { Container, Section, Form, Heading, ButtonsBox } from "./styles";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
@@ -26,7 +25,6 @@ export function EditPlate() {
 				<Form>
 					<p>Plate image</p>
 					<label htmlFor="upload">
-						{" "}
 						<p>Select an image</p>
 						<img src={Uploadimage} alt="upload arrow" />
 						<input id="upload" type="file" />
