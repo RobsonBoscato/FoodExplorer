@@ -87,6 +87,11 @@ We welcome contributions to the Food Explorer project! To contribute, follow the
 
 5. Create a pull request on the original repository.
 
+## Deploy
+
+backend link: https://foodexplorer-api-740x.onrender.com
+frontend link: 
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
