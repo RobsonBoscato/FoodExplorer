@@ -1,11 +1,12 @@
 import { styled } from "styled-components";
 
 export const Container = styled.footer`
+  .footerImg {
+
   display: flex;
-  
   align-items: center;
-  justify-content: center;
-  margin-top: 50px;
+  justify-content: space-evenly;
+  margin-top: auto;
   width: 100%;
   height: 77px;
   padding: 24px;
@@ -13,23 +14,27 @@ export const Container = styled.footer`
 
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_1000};
   
-  img {
-    max-width: 22px;
-    max-height: 18px;
-  }
-  
-  >p {
-    width: 115px;
+
+  p {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 150px;
+    gap:20px;
     font-size: 16px;
     font-weight: 700;
     color: ${({ theme }) => theme.COLORS.GRAY_700};
-  }
-  
-  >span {
-    font-size: 12px;
-    font-weight: 400;
-    color: ${({ theme }) => theme.COLORS.GRAY_200};
-  }
 
-
-`
+    img {
+      max-width: 22px;
+      max-height: 18px;
+    }
+  }
+    
+    span {
+      font-size: 12px;
+      font-weight: 400;
+      color: ${({ theme }) => theme.COLORS.GRAY_200};
+    }
+}
+  `

@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: fit-content;
-
+  
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
-
+  
   > h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -16,12 +16,13 @@ export const Container = styled.div`
   }
 
   .carousel {
+    
     max-width: 37.2rem;
     overflow: hidden;
-
+    
     cursor: grab;
   }
-
+  
   .slider {
     display: flex;
     gap: 1.6rem;

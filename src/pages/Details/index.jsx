@@ -1,11 +1,4 @@
-import {
-	Description,
-	Tags,
-	TextBox,
-	CounterOrders,
-	Container,
-	Heading,
-} from "./styles";
+import { Tags, TextBox, CounterOrders, Container, Heading } from "./styles";
 
 import { Header } from "../../components/Header";
 import { Session } from "../Home/styles";
@@ -58,6 +51,7 @@ export function DishDetails() {
 					<span>return</span>
 				</Link>
 			</Header>
+
 			<Heading>
 				<Link to="/">
 					<img
@@ -69,50 +63,59 @@ export function DishDetails() {
 				</Link>
 				<span>return</span>
 			</Heading>
-			<Session>
-				{dish?.map(
-					(dish) =>
-						dish.id == params.id && (
-							<div id="imgCard" key={dish.id}>
-								<img
-									src={`http://localhost:3333/files/${dish.image}`}
-									onError={({ currentTarget }) => {
-										currentTarget.onerror = null; // prevents looping
-										currentTarget.src =
-											"https://avatars.steamstatic.com/b5bd56c1aa4644a474a2e4972be27ef9e82e517e_full.jpg";
-									}}
-								/>
-								<TextBox>
-									<p>{dish.title}</p>
-									<Description>{dish.description}</Description>
+			<main>
+				<Session className="order">
+					{dish?.map(
+						(dish) =>
+							dish.id == params.id && (
+								<div id="imgCard" key={dish.id}>
+									<img
+										src={`http://localhost:3333/files/${dish.image}`}
+										onError={({ currentTarget }) => {
+											currentTarget.onerror = null; // prevents looping
+											currentTarget.src =
+												"https://avatars.steamstatic.com/b5bd56c1aa4644a474a2e4972be27ef9e82e517e_full.jpg";
+										}}
+									/>
 
-									<SectionTags id="tagsBox">
-										{tags?.map((tag) => (
-											<Tags key={tag.id}> {tag.name}</Tags>
-										))}
-									</SectionTags>
-								</TextBox>
-								<div id="button-wrapper">
-									{isAdmin() ? (
-										<Link to="/">
-											<SmallButton id="button-wrapped" title={"Edit plate"}></SmallButton>
-										</Link>
-									) : (
-										<CounterOrders>
-											<img
-												src={minus}
-												alt="button to decrease the quantity at your order"
-											/>
-											<p>0</p>
-											<img src={plus} alt="button to add dish to your order" />
-											<SmallButton id="order" title={` order • R$ ${dish.price}`} />
-										</CounterOrders>
-									)}
+									<TextBox className="details">
+										<p>{dish.title}</p>
+										<span>{dish.description}</span>
+
+										<SectionTags id="tagsBox">
+											{tags?.map((tag) => (
+												<Tags key={tag.id}> {tag.name}</Tags>
+											))}
+										</SectionTags>
+										<div id="button-wrapper">
+											{isAdmin() ? (
+												<Link to="/" id="button-edit">
+													<SmallButton
+														id="button-wrapped"
+														title={"Edit plate"}
+													></SmallButton>
+												</Link>
+											) : (
+												<CounterOrders>
+													<img
+														src={minus}
+														alt="button to decrease the quantity at your order"
+													/>
+													<p>0</p>
+													<img src={plus} alt="button to add dish to your order" />
+													<SmallButton
+														className="order"
+														title={` order • R$ ${dish.price}`}
+													/>
+												</CounterOrders>
+											)}
+										</div>
+									</TextBox>
 								</div>
-							</div>
-						)
-				)}
-			</Session>
+							)
+					)}
+				</Session>
+			</main>
 			<Footer />
 		</Container>
 	);

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+
   height: 100vh;
   width: 100%;
   margin: 0 auto;
@@ -25,6 +26,7 @@ export const Background = styled.div`
   margin-top: 44px;
   align-items: center;
   justify-content: center;
+  color: ${({ theme }) => theme.COLORS.GRAY_100};
   
   flex: 1;
   
@@ -50,7 +52,6 @@ export const Heading = styled.div`
   height: 120px;
 
   flex-shrink: 0;
-  background: linear-gradient(180deg, #091E26 0%, #00131C 100%);
   border-radius: 3px;
 
   color: ${({ theme }) => theme.COLORS.GRAY_100};
@@ -62,6 +63,7 @@ export const Heading = styled.div`
     margin-left: -35px;
     width: 190px;
     height: 150px;
+    border-radius: 100%;
   }
   
   
@@ -92,7 +94,7 @@ export const Session = styled.div`
   `
 export const Card = styled.div`
   display: flex;
-  width: 210px;
+  min-width: 220px;
   height: 400px;
   padding: 24px;
   gap: 12px;
@@ -124,10 +126,11 @@ export const Card = styled.div`
   > img {
     width: 88px;
     height: 88px;
+    border-radius: 100%;
   }
 
   > p {
-    min-height: 80px;
+    height: 80px;
   }
   
 

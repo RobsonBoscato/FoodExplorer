@@ -10,6 +10,10 @@ import { isAdmin } from "../../hooks/auth.jsx";
 function PlateCard(props) {
 	const navigate = useNavigate();
 
+	function addToCart() {
+		alert("O item foi adicionado ao carrinho");
+	}
+
 	return (
 		<Card>
 			{isAdmin ? (
@@ -39,17 +43,21 @@ function PlateCard(props) {
 				<p>{props.description}</p>
 			</a>
 
-			<span> R$ {props.price}</span>
-
 			<CardBuy />
+			<span> R$ {props.price}</span>
+			{isAdmin ? (
+				<></>
+			) : (
+				<>
+					<CounterDish>
+						<img src={plus} alt="button to add dishes in your order" />
+						<p>0</p>
+						<img src={minus} alt="button to decrease the quantity at your order" />
+					</CounterDish>
 
-			<CounterDish>
-				<img src={plus} alt="button to add dishes in your order" />
-				<p>0</p>
-				<img src={minus} alt="button to decrease the quantity at your order" />
-			</CounterDish>
-
-			<SmallButton title={"Add to cart"} />
+					<SmallButton title={"Add to cart"} onClick={addToCart} />
+				</>
+			)}
 		</Card>
 	);
 }

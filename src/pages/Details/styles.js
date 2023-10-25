@@ -1,44 +1,145 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  background-color: ${({ theme }) => theme.COLORS.BD_DARK_100}; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+  background-color: ${({ theme }) => theme.COLORS.BD_DARK_400}; 
   font-family: ${({ theme }) => theme.FONTS.POPPINS};
 
+  main {
+    width: 315px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    > a {
+      width: fit-content;
+
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 14px;
+      color: ${({ theme }) => theme.COLORS.GRAY_300};
+    }
   
   #imgCard{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    
     > img {
       display: flex;
-      width: 260px;;
-      height: 260px;
+      width: 240px;
+      height: 240px;
+      border-radius: 100%;
 
     }
     
-  #button-wrapper {
-      width: 100%;
-  }
-  #button-wrapped {
-    margin-top: 40px;
-      width: 100%;
-      height: 48px;
-  }
+    #button-wrapper {
+        width: 100%;
+    }
+    #button-wrapped {
+      margin-top: 40px;
+        width: 100%;
+        height: 48px;
+    }  
+    #button-edit {
+      text-decoration: none;
+    }
     
-}
-
-#tagsBox {
-  background-color: ${({ theme }) => theme.COLORS.BD_DARK_100};
-}
-
-
-> img {
-  #return {
-    color: yellow;
+    #tagsBox {
+      background-color: ${({ theme }) => theme.COLORS.BD_DARK_400};
+    }
   }
 }
 
+@media screen and (min-width: 1000px) {
+    main {
+      width: 100%;
+
+      > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        #imgCard {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          align-items: center;
+          flex-direction: row;
+          gap: 40px;
+
+          > img {
+          width: 390px;
+          height: 390px;
+          margin: 0;
+          border-radius: 100%;
+        }
+
+        .details {
+          max-width: 600px;
+          > span {
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 34px;
+          }
+      }
+
+        p {
+          display: flex;
+          font-weight: 500;
+          font-size: 40px;
+          line-height:56px;
+
+        }
+
+        #tagsBox {  
+          display: flex;
+          flex-direction: row;
+          gap: 12px;
+          min-width: 50px;
+          min-height: 30px;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          span {
+            margin: 0;
+          }
+        }
+        
+        #button-wrapped {
+          width: 120px;
+          height: 48px;
+        }  
+
+        #button-edit {
+          display: flex;
+          width: 120px;
+          text-decoration: none;
+
+        }
+      }
+      
+      .details + button {
+        width: fit-content;
+        padding: 1.2rem 2.4rem;
+      }
+    }
+  }
+  }
 `
 
 export const Session = styled.div`
@@ -72,7 +173,7 @@ display: flex;
 font-size: 24px;
 font-style: normal;
 font-weight: 500;
-padding: 5%;
+padding: 2%;
 
 
 color: ${({ theme }) => theme.COLORS.GRAY_300};
@@ -92,7 +193,6 @@ color: ${({ theme }) => theme.COLORS.GRAY_300};
 export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 20px;
   gap: 24px;
   color: ${({ theme }) => theme.COLORS.GRAY_300};
 
@@ -102,15 +202,6 @@ export const TextBox = styled.div`
     font-weight: 500;
     line-height: 140%;
   }
-`
-
-export const Description = styled.div`
-  display: flex;
-  text-align: center;
-  margin: 0 40px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 140%;
 `
 
 export const Tags = styled.div`
@@ -141,7 +232,6 @@ export const CounterOrders = styled.div`
   margin: 48px auto;
   width: 100%;
   height: 32px;
-  padding: 0px 20px;
   justify-content: center;
   align-items: center;
   gap: 14px;
