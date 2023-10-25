@@ -3,8 +3,7 @@ import { Input } from "../../components/Input";
 import { useState } from "react";
 
 import { Background, Container } from "./styles";
-import polygon from "../../assets/svg/polygon.svg";
-
+import polygon from "../../assets/svg/Polygon.svg";
 import { useAuth } from "../../hooks/auth";
 import { Link } from "react-router-dom";
 
