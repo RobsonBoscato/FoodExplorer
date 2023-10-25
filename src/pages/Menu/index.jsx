@@ -1,6 +1,6 @@
 import { Footer } from "../../components/Footer";
 import { Container, Navbar, SearchInput, Session, Heading } from "./styles";
-import close from "../../assets/svg/close.svg";
+import close from "../../assets/svg/Close.svg";
 import { Input } from "../../components/Input";
 import { FiSearch } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
