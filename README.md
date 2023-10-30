@@ -87,10 +87,14 @@ We welcome contributions to the Food Explorer project! To contribute, follow the
 
 5. Create a pull request on the original repository.
 
-## Deploy
+## Deploy & Use
+
+for admin acess:
+login: zz@mail.com
+password: 123456
 
 backend link: https://foodexplorer-api-740x.onrender.com
-frontend link: 
+frontend link: https://food-explorerproject.netlify.app/
 
 ## License
 
