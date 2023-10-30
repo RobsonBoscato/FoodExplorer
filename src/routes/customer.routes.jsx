@@ -8,7 +8,7 @@ export function CustomerRoutes() {
 	return (
 		<Routes>
 			<Route path="/" element={<Home />} />
-			<Route path="/details/:id" element={<DishDetails />} />
+			<Route path="/plates/:id" element={<DishDetails />} />
 			<Route path="/menu" element={<Menu />} />
 		</Routes>
 	);

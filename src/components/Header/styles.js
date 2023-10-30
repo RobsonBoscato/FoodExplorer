@@ -11,6 +11,7 @@ export const Container = styled.header`
 export const Navbar = styled.div`
   display: flex;
   gap: 8px;
+  height: 114px;
   align-items: center;
   justify-content: center;
   

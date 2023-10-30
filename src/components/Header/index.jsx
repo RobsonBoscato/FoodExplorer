@@ -115,11 +115,16 @@ export function Header() {
 						onKeyDown={(e) => (e.key == "Enter" ? handleSearch() : false)}
 					/>
 
-					<Button type="button" className="receipt">
-						<img src={Receipt} />
+					<Button
+						title="Orders"
+						className="order"
+						onClick={() => handleNavigate("/")}
+					/>
+					<img src={Receipt} />
+					{/* <Button type="button" className="receipt">
 						<span className="mobile">0</span>
 						<span className="desktop">Orders (0)</span>
-					</Button>
+					</Button> */}
 
 					<button type="button" className="logout" onClick={handleSignOut}>
 						<svg

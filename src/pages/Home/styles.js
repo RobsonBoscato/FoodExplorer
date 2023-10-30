@@ -20,6 +20,7 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.GRAY_300};
     font-family: ${({ theme }) => theme.FONTS.POPPINS};
   }
+    
 `
 export const Background = styled.div`
   display: flex;
@@ -138,7 +139,7 @@ export const Card = styled.div`
 
 > span {
   color: ${({ theme }) => theme.COLORS.AQUA_200};
-  font-size: 16px;
+  font-size: 32px;
   line-height: 100%;
 }
 
@@ -153,6 +154,7 @@ export const Card = styled.div`
 
 `
 export const CardBuy = styled.div`
+
 
 `
 export const CounterDish = styled.div`

@@ -17,7 +17,6 @@ const variants = {
 export const Container = styled.button`
 	cursor: pointer;
 	width: ${(props) => variants[props.$variant]?.width ?? '100%'};
-	/* max-width: 220px; */
 	height: 56px;
 	padding: 12px 32px;
 

@@ -2,6 +2,7 @@ import { SmallButton } from "../../components/SmallButton/index.jsx";
 import { Card, CardBuy, CounterDish } from "./styles.js";
 import plus from "../../assets/svg/Plus.svg";
 import minus from "../../assets/svg/Minus.svg";
+import receipt from "../../assets/svg/Receipt.svg";
 import emptyLike from "../../assets/svg/EmptyHeart.svg";
 import Pencil from "../../assets/svg/Pencil.svg";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +17,7 @@ function PlateCard(props) {
 
 	return (
 		<Card>
-			{isAdmin ? (
+			{isAdmin() ? (
 				<img
 					id="button-like"
 					src={Pencil}
@@ -45,7 +46,8 @@ function PlateCard(props) {
 
 			<CardBuy />
 			<span> R$ {props.price}</span>
-			{isAdmin ? (
+
+			{isAdmin() ? (
 				<></>
 			) : (
 				<>

@@ -212,6 +212,7 @@ export const Tags = styled.div`
 
   display: inline-flex;
   justify-content: space-around;
+  
   padding: 4px 8px;
   justify-content: center;
   align-items: center;
