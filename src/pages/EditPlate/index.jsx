@@ -69,18 +69,18 @@ export function EditPlate() {
 			if (err.response) {
 				alert(err.response.data.message);
 			} else {
-				alert("Não foi possível alterar o prato");
+				alert("Couldn't update the current plate.");
 			}
 		}
 	}
 
 	async function handleDeleteDish() {
-		const confirmDelete = confirm("Tem certeza que deseja excluir esse prato?");
+		const confirmDelete = confirm("Are you sure you want to delete this plate?");
 		if (confirmDelete) {
 			try {
 				await api.delete(`/plates/${params.id}`);
 
-				alert("Prato excluído com sucesso.");
+				alert("Dish successfully deleted.");
 
 				navigate("/");
 			} catch (err) {
@@ -144,12 +144,17 @@ export function EditPlate() {
 					<Input
 						type="text"
 						placeholder="Ex.: Ceasar Salad"
+						defaultValue={dish.name}
 						id="name"
 						onChange={(e) => setName(e.target.value)}
 					></Input>
 
 					<p>Category</p>
-					<select name="Category" onChange={(e) => setCategory(e.target.value)}>
+					<select
+						name="Category"
+						defaultValue={dish.category}
+						onChange={(e) => setCategory(e.target.value)}
+					>
 						<option name="Appetizers">Appetizers</option>
 						<option name="Meals">Meals</option>
 						<option name="Desserts">Desserts</option>
@@ -159,6 +164,7 @@ export function EditPlate() {
 					<Input
 						type="text"
 						placeholder="Ingredients"
+						defaultValue={dish.tags}
 						id="Ingredients"
 						onChange={(e) => setTags(e.target.value)}
 					></Input>
@@ -167,6 +173,7 @@ export function EditPlate() {
 					<Input
 						type="text"
 						placeholder="R$ 00,00"
+						defaultValue={dish.price}
 						id="price"
 						onChange={(e) => setPrice(e.target.value)}
 					></Input>
@@ -176,10 +183,15 @@ export function EditPlate() {
 						type="textarea"
 						placeholder="Describe the dish, the ingredients and composition."
 						id="description"
+						defaultValue={dish.description}
 						onChange={(e) => setDescription(e.target.value)}
 					></Input>
 					<ButtonsBox id="#buttons">
-						<Button title={"Delete plate"} variant="secondary"></Button>
+						<Button
+							title={"Delete plate"}
+							variant="secondary"
+							onClick={handleDeleteDish}
+						></Button>
 						<Button title={"Save changes"} variant="primary"></Button>
 					</ButtonsBox>
 				</Form>
