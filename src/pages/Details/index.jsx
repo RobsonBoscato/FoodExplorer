@@ -6,20 +6,20 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 
 import backSignal from "../../assets/svg/backSignal.svg";
-import plus from "../../assets/svg/Plus.svg";
-import minus from "../../assets/svg/Minus.svg";
-import { SmallButton } from "../../components/SmallButton";
-import { Link, useParams } from "react-router-dom";
+
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Footer } from "../../components/Footer";
 
 import { isAdmin } from "../../hooks/auth";
 import { SectionTags } from "../NewPlate/styles";
+import { SmallButton } from "../../components/SmallButton";
 
 export function DishDetails() {
 	const [dish, setDish] = useState([]);
 	const [tags, setTags] = useState([]);
 
 	const params = useParams();
+	const navigate = useNavigate();
 
 	const image = `${api.defaults.baseURL}/files/${dish.image}`;
 
@@ -89,12 +89,13 @@ export function DishDetails() {
 										</SectionTags>
 										<div id="button-wrapper">
 											{isAdmin() ? (
-												<Link to="/" id="button-edit">
+												<>
 													<SmallButton
 														id="button-wrapped"
 														title={"Edit plate"}
+														onClick={() => navigate(`/editplate/${dish.id}`)}
 													></SmallButton>
-												</Link>
+												</>
 											) : (
 												<CounterOrders>
 													<img

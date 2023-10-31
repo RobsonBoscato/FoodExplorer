@@ -96,7 +96,7 @@ export const Session = styled.div`
   `
 export const Card = styled.div`
   display: flex;
-  min-width: 220px;
+  width: 220px;
   height: 400px;
   padding: 24px;
   gap: 12px;
@@ -132,23 +132,20 @@ export const Card = styled.div`
   }
 
   > p {
-    height: 80px;
+    height: 120px;
   }
-  
 
 }
 
 > span {
   color: ${({ theme }) => theme.COLORS.AQUA_200};
-  font-size: 32px;
+  font-size: 16px;
   line-height: 100%;
 }
 
 > #button-like {
-
   position: relative;
   left: 50%;
-
   width: 24px;
   height: 22px;
 }

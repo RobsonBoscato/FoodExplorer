@@ -5,6 +5,7 @@ import { Button } from "../../components/Button";
 import Uploadimage from "../../assets/svg/UploadImage.svg";
 import { Link } from "react-router-dom";
 import backSignal from "../../assets/svg/backSignal.svg";
+import { Footer } from "../../components/Footer";
 
 export function EditPlate() {
 	return (
