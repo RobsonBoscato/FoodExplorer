@@ -116,7 +116,9 @@ export function DishDetails() {
 					)}
 				</Session>
 			</main>
-			<Footer />
+			<div className="footer-wrapper">
+				<Footer />
+			</div>
 		</Container>
 	);
 }

@@ -86,6 +86,7 @@ export const TextBox = styled.div`
 export const Session = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   
   margin-top: 24px;
   padding: 24px;

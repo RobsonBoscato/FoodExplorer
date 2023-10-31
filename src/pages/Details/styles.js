@@ -3,19 +3,26 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 100%;
   height: 100vh;
   background-color: ${({ theme }) => theme.COLORS.BD_DARK_400}; 
   font-family: ${({ theme }) => theme.FONTS.POPPINS};
-
+  
+  .footer-wrapper {
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+  }
+  
   main {
-    width: 315px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 16px;
-
+    
+    background-color: ${({ theme }) => theme.COLORS.BD_DARK_400}; 
     > a {
       width: fit-content;
 

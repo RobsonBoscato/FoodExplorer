@@ -25,84 +25,85 @@ export function Home({ admin }) {
 
 	return (
 		<Container>
-			<Header />
-			<Background />
-			<Heading id="blue-bd">
-				<img src={macaroon} alt="image of colorfull macaroons floating." />
+			<div className="main">
+				<Header />
+				<Background />
+				<Heading id="blue-bd">
+					<img src={macaroon} alt="image of colorfull macaroons floating." />
 
-				<TextBox>
-					<h4>Sabores inigualáveis</h4>
-					<p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
-				</TextBox>
-			</Heading>
+					<TextBox>
+						<h4>Sabores inigualáveis</h4>
+						<p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
+					</TextBox>
+				</Heading>
 
-			<Session>
-				{plates?.filter((plate) => plate.category === "Appetizers").length > 0 && (
-					<DishCarousel title={"Appetizers"}>
-						{plates ? (
-							plates
-								.filter((platesFilter) => platesFilter.category === "Appetizers")
-								.map((plate) => (
-									<PlateCard
-										key={String(plate.id)}
-										id={plate.id}
-										image={plate.image}
-										description={plate.description}
-										price={plate.price}
-									></PlateCard>
-								))
-						) : (
-							<h3>There's no dishes to show in this category.</h3>
-						)}
-					</DishCarousel>
-				)}
-			</Session>
+				<Session>
+					{plates?.filter((plate) => plate.category === "Appetizers").length > 0 && (
+						<DishCarousel title={"Appetizers"}>
+							{plates ? (
+								plates
+									.filter((platesFilter) => platesFilter.category === "Appetizers")
+									.map((plate) => (
+										<PlateCard
+											key={String(plate.id)}
+											id={plate.id}
+											image={plate.image}
+											description={plate.description}
+											price={plate.price}
+										></PlateCard>
+									))
+							) : (
+								<h3>There's no dishes to show in this category.</h3>
+							)}
+						</DishCarousel>
+					)}
+				</Session>
 
-			<Session>
-				{plates.filter((plate) => plate.category === "Main meals").length > 0 && (
-					<DishCarousel title={"Main meals"}>
-						{plates ? (
-							plates
-								.filter((platesFilter) => platesFilter.category === "Main meals")
-								.map((plate) => (
-									<PlateCard
-										key={String(plate.id)}
-										id={plate.id}
-										image={plate.image}
-										description={plate.description}
-										price={plate.price}
-									></PlateCard>
-								))
-						) : (
-							<h3>There's no dishes to show in this category.</h3>
-						)}
-					</DishCarousel>
-				)}
-			</Session>
+				<Session>
+					{plates.filter((plate) => plate.category === "Main meals").length > 0 && (
+						<DishCarousel title={"Main meals"}>
+							{plates ? (
+								plates
+									.filter((platesFilter) => platesFilter.category === "Main meals")
+									.map((plate) => (
+										<PlateCard
+											key={String(plate.id)}
+											id={plate.id}
+											image={plate.image}
+											description={plate.description}
+											price={plate.price}
+										></PlateCard>
+									))
+							) : (
+								<h3>There's no dishes to show in this category.</h3>
+							)}
+						</DishCarousel>
+					)}
+				</Session>
 
-			<Session>
-				{plates.filter((plate) => plate.category === "Desserts").length > 0 && (
-					<DishCarousel title={"Desserts"}>
-						{plates ? (
-							plates
-								.filter((platesFilter) => platesFilter.category === "Desserts")
-								.map((plate) => (
-									<PlateCard
-										key={String(plate.id)}
-										id={plate.id}
-										image={plate.image}
-										description={plate.description}
-										price={plate.price}
-									></PlateCard>
-								))
-						) : (
-							<h3>There's no dishes to show in this category.</h3>
-						)}
-					</DishCarousel>
-				)}
-			</Session>
-
-			<Footer />
+				<Session>
+					{plates.filter((plate) => plate.category === "Desserts").length > 0 && (
+						<DishCarousel title={"Desserts"}>
+							{plates ? (
+								plates
+									.filter((platesFilter) => platesFilter.category === "Desserts")
+									.map((plate) => (
+										<PlateCard
+											key={String(plate.id)}
+											id={plate.id}
+											image={plate.image}
+											description={plate.description}
+											price={plate.price}
+										></PlateCard>
+									))
+							) : (
+								<h3>There's no dishes to show in this category.</h3>
+							)}
+						</DishCarousel>
+					)}
+				</Session>
+				<Footer />
+			</div>
 		</Container>
 	);
 }

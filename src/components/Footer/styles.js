@@ -1,6 +1,13 @@
 import { styled } from "styled-components";
 
 export const Container = styled.footer`
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+
+    main {
+      height: 100vh;
+    }
   .footerImg {
 
   display: flex;

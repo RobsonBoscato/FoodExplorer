@@ -125,6 +125,10 @@ export const Navbar = styled.div`
     align-items: center;
     justify-content: center;
 
+    .receipt {
+      display: none;
+    }
+    
     .menu {
       display: none;
     }

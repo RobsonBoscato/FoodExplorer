@@ -120,7 +120,7 @@ export function Header() {
 						className="order"
 						onClick={() => handleNavigate("/")}
 					/>
-					<img src={Receipt} />
+					<img className="receipt" src={Receipt} />
 					{/* <Button type="button" className="receipt">
 						<span className="mobile">0</span>
 						<span className="desktop">Orders (0)</span>
