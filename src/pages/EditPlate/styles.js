@@ -86,7 +86,7 @@ flex-direction: column;
 justify-content: center;
 gap: 26px;
 
-padding: 0px 47px 0px;
+padding: 0px 47px 60px;
 
 > p {
   display: flex;
@@ -100,7 +100,7 @@ padding: 0px 47px 0px;
 export const Heading = styled.div`
 
 display: flex;
-font-size: 16px;
+font-size: 18px;
 font-style: normal;
 font-weight: 500;
 padding-left: 5%;
@@ -123,6 +123,7 @@ width: 100%;
 flex-direction: column;
 justify-content: center;
 gap: 26px;
+margin-bottom: 50px;
 
 > select {
   font-family: Roboto;

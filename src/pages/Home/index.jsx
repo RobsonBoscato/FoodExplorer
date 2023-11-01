@@ -1,5 +1,5 @@
 import { Header } from "../../components/Header";
-import macaroon from "../../assets/png/macaroons.png";
+import macaroon from "../../assets/png/macaroonshq.png";
 import { Background, Container, Heading, Session, TextBox } from "./styles.js";
 import PlateCard from "./PlateCard";
 import { Footer } from "../../components/Footer";

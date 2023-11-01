@@ -34,22 +34,22 @@ export function EditPlate() {
 	dish.price = price ?? dish.price;
 	dish.category = category ?? dish.category;
 
-	// function handleRemoveIngredient(deleted) {
-	// 	setTags((prevState) =>
-	// 		prevState.filter((ingredient) => ingredient !== deleted)
-	// 	);
-	// }
+	function handleRemoveIngredient(deleted) {
+		setTags((prevState) =>
+			prevState.filter((ingredient) => ingredient !== deleted)
+		);
+	}
 
-	// function handleAddIngredient() {
-	// 	setTags((prevState) => [...prevState, newIngredient]);
+	function handleAddIngredient() {
+		setTags((prevState) => [...prevState, newIngredient]);
 
-	// 	setNewIngredient("");
-	// }
+		setNewIngredient("");
+	}
 
 	async function handleUpdateDish() {
 		const dishForm = new FormData();
 
-		dishForm.append("name", dish.name);
+		dishForm.append("name", dish.title);
 		dishForm.append("price", dish.price);
 		dishForm.append("description", dish.description);
 		dishForm.append("category", dish.category);
