@@ -10,7 +10,7 @@ export const Container = styled.div`
   align-items: center;
   
   flex-direction: column;
-  background-color: ${({ theme }) => theme.COLORS.BD_DARK_700};
+  background-color: ${({ theme }) => theme.COLORS.BD_DARK_400};
   
   > p {
     padding: 5%;
@@ -22,6 +22,10 @@ export const Container = styled.div`
   }
 
   .main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
     min-height: 100vh;
     margin-bottom: 80px;
   }
@@ -58,21 +62,37 @@ export const Heading = styled.div`
   width: 375px;
   height: 120px;
 
-  flex-shrink: 0;
-  border-radius: 3px;
+  border-radius: 8px;
 
   color: ${({ theme }) => theme.COLORS.GRAY_100};
   font-family: ${({ theme }) => theme.FONTS.POPPINS};
   font-size: 18px;
+  background: var(--gradients-200, linear-gradient(180deg, #091E26 0%, #00131C 100%));
 
   > img {
     margin-top: -28px;
     margin-left: -35px;
     width: 190px;
     height: 150px;
-    border-radius: 100%;
   }
-  
+
+  @media screen and (min-width: 1000px) {
+
+    width: 1120px;
+    height: 260px;
+    margin: inherit;
+    margin-top: 40px;
+
+    > img {
+      width: 632px;
+      height: 406px;
+      opacity: 0.8;
+      padding: 20px;
+
+    }
+   
+
+  }
   
   `
 export const TextBox = styled.div`
@@ -85,8 +105,22 @@ export const TextBox = styled.div`
     font-size: 12px;
     font-weight: 400;
     line-height: 140%;
-
   }
+
+  @media screen and (min-width: 1000px) {
+
+    > h4 {
+      font-size: 40px;
+      font-weight: 500;
+    }
+
+    > p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+}
 
 `
 export const Session = styled.div`
