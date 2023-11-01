@@ -32,8 +32,11 @@ export function Home({ admin }) {
 					<img src={macaroon} alt="image of colorfull macaroons floating." />
 
 					<TextBox>
-						<h4>Sabores inigualáveis</h4>
-						<p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
+						<h4>Unparalleled flavors</h4>
+						<p>
+							Fell the deepest care taken with the ingredient selection and preparation
+							with our dishes.
+						</p>
 					</TextBox>
 				</Heading>
 

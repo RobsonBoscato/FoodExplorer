@@ -96,7 +96,8 @@ export const Session = styled.div`
   `
 export const Card = styled.div`
   display: flex;
-  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
   height: 400px;
   padding: 24px;
   gap: 12px;
