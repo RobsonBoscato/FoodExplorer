@@ -34,17 +34,17 @@ export function EditPlate() {
 	dish.price = price ?? dish.price;
 	dish.category = category ?? dish.category;
 
-	function handleRemoveIngredient(deleted) {
-		setTags((prevState) =>
-			prevState.filter((ingredient) => ingredient !== deleted)
-		);
-	}
+	// function handleRemoveIngredient(deleted) {
+	// 	setTags((prevState) =>
+	// 		prevState.filter((ingredient) => ingredient !== deleted)
+	// 	);
+	// }
 
-	function handleAddIngredient() {
-		setTags((prevState) => [...prevState, newIngredient]);
+	// function handleAddIngredient() {
+	// 	setTags((prevState) => [...prevState, newIngredient]);
 
-		setNewIngredient("");
-	}
+	// 	setNewIngredient("");
+	// }
 
 	async function handleUpdateDish() {
 		const dishForm = new FormData();
@@ -60,7 +60,7 @@ export function EditPlate() {
 		}
 
 		try {
-			const response = await api.put(`/plates/${params.id}`, dishForm);
+			const response = await api.patch(`/plates/${params.id}`, dishForm);
 
 			alert(response.data);
 
@@ -87,7 +87,7 @@ export function EditPlate() {
 				if (err.response) {
 					alert(err.response.data.message);
 				} else {
-					alert("Não foi possível excluir o prato.");
+					alert("Was not able to delete the dish, please try again.");
 				}
 			}
 		}
@@ -100,14 +100,14 @@ export function EditPlate() {
 			setDish(response.data);
 		}
 
-		async function handleIngredients() {
+		async function handleTags() {
 			const response = await api.get(`/tags/${params.id}`);
 
 			setTags(response.data);
 		}
 
 		handleDish();
-		handleIngredients();
+		handleTags();
 	}, []);
 
 	return (
@@ -192,7 +192,11 @@ export function EditPlate() {
 							variant="secondary"
 							onClick={handleDeleteDish}
 						></Button>
-						<Button title={"Save changes"} variant="primary"></Button>
+						<Button
+							title={"Save changes"}
+							variant="primary"
+							onClick={handleUpdateDish}
+						></Button>
 					</ButtonsBox>
 				</Form>
 			</Section>

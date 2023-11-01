@@ -2,6 +2,81 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 background-color: ${({ theme }) => theme.COLORS.BD_DARK_400}; 
+
+
+@media screen and (min-width: 1000px) {
+    main {
+      width: 112rem;
+      margin: 4rem auto 11.6rem;
+
+      a {
+        gap: 1.1rem;
+
+        font-family: "Poppins", sans-serif;
+        font-weight:700;
+        font-size: 2.4rem;
+        line-height:1.4rem;
+
+        svg {
+          width: 1.2rem;
+          height: 2.2rem;
+        }
+      }
+
+      h1 {
+        margin-bottom: 0.8rem;
+      }
+
+      .row {
+        flex-direction: row;
+        gap: 3.2rem;
+        align-items: end;
+        
+
+        > div {
+          gap: 1.6rem;
+          
+        }
+
+        > div:nth-child(2) {
+          width: 50%;
+        }
+      
+
+      }
+
+      .image label {
+        width: 22.9rem;
+      }
+
+      .dish-category {
+        width: 36.4rem;
+
+        select {
+          height: 4.8rem;
+        }
+      }
+
+      .ingredients {
+        width: 83.7rem;
+
+        grid-template-columns: repeat(5, 1fr);
+
+        > div {
+          width: fit-content;
+        }
+      }
+
+      > div:last-child {
+        align-self: end;
+
+        button {
+          width: fit-content;
+          padding: 1.2rem 2.4rem;
+        }
+      }
+    }
+  }
 `
 
 export const Section = styled.div`
@@ -112,3 +187,4 @@ export const ButtonsBox = styled.div`
   display: flex;
   gap: 30px;
   `
+

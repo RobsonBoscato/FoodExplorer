@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 
 import backSignal from "../../assets/svg/backSignal.svg";
+import minus from "../../assets/svg/Minus.svg";
+import plus from "../../assets/svg/Plus.svg";
 
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Footer } from "../../components/Footer";

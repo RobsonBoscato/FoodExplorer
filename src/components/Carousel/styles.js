@@ -16,8 +16,7 @@ export const Container = styled.div`
   }
 
   .carousel {
-    
-    max-width: 300px;    
+    max-width: 600px;    
     overflow: hidden;    
 
     cursor: grab;
