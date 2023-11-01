@@ -8,33 +8,25 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSearch } from "../../hooks/search";
 
 import { isAdmin, useAuth } from "../../hooks/auth";
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
 
 export function Menu() {
 	const { signOut } = useAuth();
-	const navigation = useNavigate();
+	const navigate = useNavigate();
+
+	const { tagsSearch, search, setSearch, checkURL, setCheckURL } = useSearch();
 
 	function handleSignOut() {
 		const confirmSignOut = confirm("Are you sure you want to sign out?");
 		if (confirmSignOut) {
 			signOut();
-			navigation("/");
+			navigate("/");
 		}
 	}
 
-	const [plates, setPlates] = useState([]);
-	const { search } = useSearch();
-
-	useEffect(() => {
-		async function fetchPlates() {
-			const response = await api.get(`/plates?title=${search}`);
-
-			setPlates(Object.values(response.data));
-		}
-
-		fetchPlates();
-	}, [search]);
+	function handleSearch() {
+		navigate("/");
+		setCheckURL(false);
+	}
 
 	return (
 		<Container>
@@ -56,6 +48,9 @@ export function Menu() {
 				<Input
 					icon={FiSearch}
 					placeholder="Search for appetizers, meals or ingredients"
+					defaultValue={search}
+					onChange={(e) => tagsSearch(e.target.value)}
+					onKeyDown={(e) => (e.key == "Enter" ? handleSearch() : false)}
 				/>
 				{isAdmin() ? (
 					<Link to="/newplate">

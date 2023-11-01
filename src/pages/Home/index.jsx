@@ -9,7 +9,7 @@ import { DishCarousel } from "../../components/Carousel";
 
 import { useSearch } from "../../hooks/search";
 
-export function Home({ admin }) {
+export function Home() {
 	const [plates, setPlates] = useState([]);
 	const { search } = useSearch();
 
