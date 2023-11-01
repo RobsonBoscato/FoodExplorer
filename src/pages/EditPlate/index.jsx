@@ -62,7 +62,7 @@ export function EditPlate() {
 		try {
 			const response = await api.patch(`/plates/${params.id}`, dishForm);
 
-			alert(response.data);
+			alert("Success", response);
 
 			navigate("/");
 		} catch (err) {

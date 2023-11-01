@@ -40,7 +40,7 @@ function PlateCard(props) {
 						// alt = `picture of the plate ${props.title}`;
 					}}
 				/>
-
+				<span>{props.title}</span>
 				<p>{props.description}</p>
 			</a>
 

@@ -49,6 +49,7 @@ export function Home({ admin }) {
 									.map((plate) => (
 										<PlateCard
 											key={String(plate.id)}
+											title={plate.title}
 											id={plate.id}
 											image={plate.image}
 											description={plate.description}
@@ -71,6 +72,7 @@ export function Home({ admin }) {
 									.map((plate) => (
 										<PlateCard
 											key={String(plate.id)}
+											title={plate.title}
 											id={plate.id}
 											image={plate.image}
 											description={plate.description}
@@ -94,6 +96,7 @@ export function Home({ admin }) {
 										<PlateCard
 											key={String(plate.id)}
 											id={plate.id}
+											title={plate.title}
 											image={plate.image}
 											description={plate.description}
 											price={plate.price}
@@ -105,7 +108,7 @@ export function Home({ admin }) {
 						</DishCarousel>
 					)}
 				</Session>
-				<Footer />
+				<Footer className="footer-wrapper" />
 			</div>
 		</Container>
 	);

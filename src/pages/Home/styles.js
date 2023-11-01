@@ -20,8 +20,14 @@ export const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.GRAY_300};
     font-family: ${({ theme }) => theme.FONTS.POPPINS};
   }
-    
-`
+
+  .main {
+    min-height: 100vh;
+    margin-bottom: 80px;
+  }
+
+
+  `
 export const Background = styled.div`
   display: flex;
   margin-top: 44px;
@@ -86,7 +92,6 @@ export const TextBox = styled.div`
 export const Session = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   
   margin-top: 24px;
   padding: 24px;
@@ -96,9 +101,9 @@ export const Session = styled.div`
   `
 export const Card = styled.div`
   display: flex;
-  min-width: 220px;
-  max-width: 220px;
-  height: 400px;
+  min-width: 250px;
+  max-width: 250px;
+  height: 415px;
   padding: 24px;
   gap: 12px;
   
@@ -133,7 +138,17 @@ export const Card = styled.div`
   }
 
   > p {
-    height: 120px;
+    font-size: 14px;
+    font-weight: 400;
+    min-height: 40px;
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
+    font-family: ${({ theme }) => theme.FONTS.ROBOTO};
+  }
+  
+  span {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: ${({ theme }) => theme.FONTS.POPPINS};
   }
 
 }
