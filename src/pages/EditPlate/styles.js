@@ -1,10 +1,29 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+
 background-color: ${({ theme }) => theme.COLORS.BD_DARK_400}; 
+
+  .ingredients {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+
+    width: 100%;
+  }
 
 
 @media screen and (min-width: 1000px) {
+  .ingredients {
+        width: 100%;
+
+        grid-template-columns: repeat(5, 1fr);
+
+        > div {
+          width: fit-content;
+        }
+      }
+
     main {
       width: 112rem;
       margin: 4rem auto 11.6rem;
@@ -54,16 +73,6 @@ background-color: ${({ theme }) => theme.COLORS.BD_DARK_400};
 
         select {
           height: 4.8rem;
-        }
-      }
-
-      .ingredients {
-        width: 83.7rem;
-
-        grid-template-columns: repeat(5, 1fr);
-
-        > div {
-          width: fit-content;
         }
       }
 

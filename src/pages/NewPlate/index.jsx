@@ -48,15 +48,12 @@ export function NewPlate() {
 		if (tags.length < 1) {
 			return alert("You should add at least two tags to the plate");
 		}
-		console.log(tags);
-
 		if (!price) {
 			return alert("To save, you should add a price for the meal.");
 		}
 		if (!category) {
 			return alert("To save, you should select a category for the dish.");
 		}
-
 		if (!description) {
 			return alert(
 				"It's important to have a description, that's what will display to the client."
@@ -68,6 +65,7 @@ export function NewPlate() {
 		plateForm.append("price", price);
 		plateForm.append("description", description);
 		plateForm.append("image", image);
+
 		tags.map((tag) => plateForm.append("tags", tag));
 
 		try {

@@ -9,9 +9,10 @@ import Uploadimage from "../../assets/svg/UploadImage.svg";
 import backSignal from "../../assets/svg/backSignal.svg";
 
 import { Link, useParams, useNavigate } from "react-router-dom";
-
 import { useState, useEffect } from "react";
+
 import { api } from "../../services/api";
+import { TagItem } from "../../components/TagItem";
 
 export function EditPlate() {
 	const params = useParams();
@@ -20,7 +21,7 @@ export function EditPlate() {
 	const [dish, setDish] = useState({});
 
 	const [category, setCategory] = useState();
-	const [name, setName] = useState();
+	const [title, setTitle] = useState();
 	const [image, setImage] = useState("");
 	const [price, setPrice] = useState();
 	const [description, setDescription] = useState();
@@ -28,8 +29,8 @@ export function EditPlate() {
 	const [tags, setTags] = useState([]);
 	const [newIngredient, setNewIngredient] = useState("");
 
-	dish.name = name ?? dish.name;
 	dish.description = description ?? dish.description;
+	dish.title = title ?? dish.title;
 	dish.image = image ?? dish.image;
 	dish.price = price ?? dish.price;
 	dish.category = category ?? dish.category;
@@ -49,22 +50,21 @@ export function EditPlate() {
 	async function handleUpdateDish() {
 		const dishForm = new FormData();
 
-		dishForm.append("name", dish.title);
+		dishForm.append("title", dish.title);
 		dishForm.append("price", dish.price);
 		dishForm.append("description", dish.description);
 		dishForm.append("category", dish.category);
 		dishForm.append("tags", JSON.stringify(tags));
-
 		{
 			image ? dishForm.append("image", image) : false;
 		}
 
 		try {
-			const response = await api.patch(`/plates/${params.id}`, dishForm);
+			const response = await api.put(`/plates/${params.id}`, dishForm);
 
 			alert("Success", response);
 
-			navigate("/");
+			navigate(-1);
 		} catch (err) {
 			if (err.response) {
 				alert(err.response.data.message);
@@ -74,13 +74,13 @@ export function EditPlate() {
 		}
 	}
 
-	async function handleDeleteDish() {
+	async function handleDeletePlate() {
 		const confirmDelete = confirm("Are you sure you want to delete this plate?");
 		if (confirmDelete) {
 			try {
 				await api.delete(`/plates/${params.id}`);
 
-				alert("Dish successfully deleted.");
+				alert(`Dish id:${params.id}, was successfully deleted.`);
 
 				navigate("/");
 			} catch (err) {
@@ -95,15 +95,33 @@ export function EditPlate() {
 
 	useEffect(() => {
 		async function handleDish() {
+			// try {
 			const response = await api.get(`/plates/${params.id}`);
 
-			setDish(response.data);
+			setDish(response.data[0]);
+
+			console.log("dish:", dish);
+			// Update the state with the fetched plate data
+			// setCategory(data[0].category);
+			// setName(data[0].title);
+			// setImage(data[0].image);
+			// setPrice(data[0].price);
+			// setDescription(data[0].description);
+			// } catch (error) {
+			// 	console.error("Error fetching plate data:", error);
+			// }
 		}
 
 		async function handleTags() {
+			// try {
 			const response = await api.get(`/tags/${params.id}`);
+			// const { data } = response;
 
 			setTags(response.data);
+			console.log("tags:", tags);
+			// } catch (error) {
+			// 	console.error("Error fetching tags:", error);
+			// }
 		}
 
 		handleDish();
@@ -115,25 +133,29 @@ export function EditPlate() {
 			<Header />
 			<Section>
 				<Heading>
-					<Link to="/" />
+					<Link to={-1} />
 					<img
 						id="arrow"
 						src={backSignal}
 						alt="return button to main page"
 						title="return"
-						onClick={() => navigate("/")}
+						onClick={() => navigate(-1)}
 					/>
-					<span onClick={() => navigate("/")}>return</span>
+					<span>return</span>
 				</Heading>
 				<p>Edit plate</p>
+
 				<Form>
 					<p>Plate image</p>
 					<label htmlFor="upload">
 						<p>Select an image</p>
 						<img src={Uploadimage} alt="upload arrow" />
+
 						<input
 							id="upload"
 							type="file"
+							accept="image/png, image/jpeg"
+							name="image"
 							onChange={(e) => setImage(e.target.files[0])}
 						/>
 					</label>
@@ -141,44 +163,56 @@ export function EditPlate() {
 					<label id="second" htmlFor="name">
 						Name
 					</label>
+
 					<Input
 						type="text"
 						placeholder="Ex.: Ceasar Salad"
-						defaultValue={dish.name}
+						defaultValue={dish.title}
 						id="name"
-						onChange={(e) => setName(e.target.value)}
+						onChange={(e) => setTitle(e.target.value)}
 					></Input>
 
 					<p>Category</p>
-					<select
-						name="Category"
-						defaultValue={dish.category}
-						onChange={(e) => setCategory(e.target.value)}
-					>
-						<option name="Appetizers">Appetizers</option>
-						<option name="Meals">Meals</option>
-						<option name="Desserts">Desserts</option>
+
+					<select name="Category" onChange={(e) => setCategory(e.target.value)}>
+						<option value="Appetizers">Appetizers</option>
+						<option value="Main meals">Main meals</option>
+						<option value="Desserts">Desserts</option>
 					</select>
 
 					<label htmlFor="Ingredients">Ingredients</label>
-					<Input
-						type="text"
-						placeholder="Ingredients"
-						defaultValue={dish.tags}
-						id="Ingredients"
-						onChange={(e) => setTags(e.target.value)}
-					></Input>
 
+					<div className="item">
+						<div className="ingredients">
+							<TagItem
+								isNew
+								placeholder="Adicionar"
+								value={newIngredient}
+								onChange={(e) => setNewIngredient(e.target.value)}
+								onClick={handleAddIngredient}
+							/>
+
+							{tags.map((ingredient, index) => (
+								<TagItem
+									key={String(index)}
+									value={ingredient.name || ingredient}
+									onClick={() => handleRemoveIngredient(ingredient)}
+								/>
+							))}
+						</div>
+					</div>
 					<label htmlFor="price">Price</label>
+
 					<Input
 						type="text"
-						placeholder="R$ 00,00"
+						placeholder="R$ 24,00"
 						defaultValue={dish.price}
 						id="price"
 						onChange={(e) => setPrice(e.target.value)}
 					></Input>
 
 					<label htmlFor="description">Description</label>
+
 					<Input
 						type="textarea"
 						placeholder="Describe the dish, the ingredients and composition."
@@ -186,12 +220,14 @@ export function EditPlate() {
 						defaultValue={dish.description}
 						onChange={(e) => setDescription(e.target.value)}
 					></Input>
+
 					<ButtonsBox id="#buttons">
 						<Button
 							title={"Delete plate"}
 							variant="secondary"
-							onClick={handleDeleteDish}
+							onClick={handleDeletePlate}
 						></Button>
+
 						<Button
 							title={"Save changes"}
 							variant="primary"

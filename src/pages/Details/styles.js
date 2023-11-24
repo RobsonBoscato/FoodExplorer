@@ -28,6 +28,7 @@ export const Container = styled.div`
 
       display: flex;
       align-items: center;
+      text-align: center;
       gap: 1.1rem;
 
       font-family: 'Poppins', sans-serif;
@@ -39,6 +40,7 @@ export const Container = styled.div`
   
   #imgCard{
     display: flex;
+    margin: 0 auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -71,6 +73,18 @@ export const Container = styled.div`
 }
 
 @media screen and (min-width: 1000px) {
+    main {
+
+        #imgCard {
+
+          > img {
+          width: 320px;
+          height: 320px;
+        }
+      }
+    }
+  }
+@media screen and (min-width: 1200px) {
     main {
       width: 100%;
 
