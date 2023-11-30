@@ -72,7 +72,7 @@ export function DishDetails() {
 							dish.id == params.id && (
 								<div id="imgCard" key={dish.id}>
 									<img
-										src={`http://localhost:3333/files/${dish.image}`}
+										src={image}
 										onError={({ currentTarget }) => {
 											currentTarget.onerror = null; // prevents looping
 											currentTarget.src =

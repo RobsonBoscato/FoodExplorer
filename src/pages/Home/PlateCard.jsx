@@ -10,9 +10,9 @@ import { isAdmin } from "../../hooks/auth.jsx";
 
 import { api } from "../../services/api.js";
 
-export function PlateCard(props, {id, name, image, price, description}) {
+export function PlateCard(props) {
 	const navigate = useNavigate();
-	const imageUrl = `${api.defaults.baseURL}/files/${image}`;
+	const imageUrl = `${api.defaults.baseURL}/files/${props.image}`;
 
 	function addToCart() {
 		alert("O item foi adicionado ao carrinho");
