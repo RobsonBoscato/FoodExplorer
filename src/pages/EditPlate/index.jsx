@@ -99,17 +99,6 @@ export function EditPlate() {
 			const response = await api.get(`/plates/${params.id}`);
 
 			setDish(response.data[0]);
-
-			console.log("dish:", dish);
-			// Update the state with the fetched plate data
-			// setCategory(data[0].category);
-			// setName(data[0].title);
-			// setImage(data[0].image);
-			// setPrice(data[0].price);
-			// setDescription(data[0].description);
-			// } catch (error) {
-			// 	console.error("Error fetching plate data:", error);
-			// }
 		}
 
 		async function handleTags() {
@@ -118,7 +107,6 @@ export function EditPlate() {
 			// const { data } = response;
 
 			setTags(response.data);
-			console.log("tags:", tags);
 			// } catch (error) {
 			// 	console.error("Error fetching tags:", error);
 			// }

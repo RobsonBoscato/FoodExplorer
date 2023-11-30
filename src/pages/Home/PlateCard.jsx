@@ -8,8 +8,11 @@ import Pencil from "../../assets/svg/Pencil.svg";
 import { useNavigate } from "react-router-dom";
 import { isAdmin } from "../../hooks/auth.jsx";
 
-function PlateCard(props) {
+import { api } from "../../services/api.js";
+
+export function PlateCard(props, {id, name, image, price, description}) {
 	const navigate = useNavigate();
+	const imageUrl = `${api.defaults.baseURL}/files/${image}`;
 
 	function addToCart() {
 		alert("O item foi adicionado ao carrinho");
@@ -32,12 +35,11 @@ function PlateCard(props) {
 			)}
 			<a onClick={() => navigate(`/plates/${props.id}`)}>
 				<img
-					src={`http://localhost:3333/files/${props.image}`}
+					src={imageUrl}
 					onError={({ currentTarget }) => {
 						currentTarget.onerror = null; // prevents looping
 						currentTarget.src =
 							"https://avatars.steamstatic.com/b5bd56c1aa4644a474a2e4972be27ef9e82e517e_full.jpg";
-						// alt = `picture of the plate ${props.title}`;
 					}}
 				/>
 				<span>{props.title}</span>
