@@ -153,7 +153,7 @@ export const Card = styled.div`
     align-items: center;
     
     padding: 10px;
-    min-height: 70px;
+    height: 250px;
     clip-path: inset(0% 0% 5px 0px);
     text-align: center;
     font-size: 14px;

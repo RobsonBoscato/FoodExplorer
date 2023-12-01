@@ -17,27 +17,38 @@ import { SectionTags } from "../NewPlate/styles";
 import { SmallButton } from "../../components/SmallButton";
 
 export function DishDetails() {
-	const [dish, setDish] = useState([]);
-	const [tags, setTags] = useState([]);
-
-	const params = useParams();
+	
+	
 	const navigate = useNavigate();
-
-	const image = `${api.defaults.baseURL}/files/${dish.image}`;
-
+	const params = useParams();
+	
+	const [tags, setTags] = useState([]);
+	const [dish, setDish] = useState([]);
+	
+	const image =  `${api.defaults.baseURL}/files/${dish.image}`;	
+	
 	useEffect(() => {
 		async function fetchDish() {
 			const response = await api.get(`/plates/${params.id}`);
 			setDish(Object.values(response.data));
 		}
-
+		
 		async function fetchTags() {
 			const response = await api.get(`/tags/${params.id}`);
 			setTags(Object.values(response.data));
 		}
+		
+		async function imageRender(url) {
+			const imageUrl = url
+			const image =  `${api.defaults.baseURL}/files/${imageUrl}`;	
 
+			return image
+			
+		}
+		
 		fetchDish();
 		fetchTags();
+		imageRender();
 	}, []);
 
 	return (
@@ -69,17 +80,17 @@ export function DishDetails() {
 				<Session className="order">
 					{dish?.map(
 						(dish) =>
-							dish.id == params.id && (
-								<div id="imgCard" key={dish.id}>
-									<img
-										src={image}
-										onError={({ currentTarget }) => {
-											currentTarget.onerror = null; // prevents looping
-											currentTarget.src =
-												"https://avatars.steamstatic.com/b5bd56c1aa4644a474a2e4972be27ef9e82e517e_full.jpg";
-										}}
-									/>
-
+						dish.id == params.id && (
+							
+							<div id="imgCard" key={dish.id}>
+								<img
+									src={`${api.defaults.baseURL}/files/${dish.image}`}
+									onError={({ currentTarget }) => {
+										currentTarget.onerror = null; // prevents looping
+										currentTarget.src =
+											"https://avatars.steamstatic.com/b5bd56c1aa4644a474a2e4972be27ef9e82e517e_full.jpg";
+								}}
+							/>
 									<TextBox className="details">
 										<p>{dish.title}</p>
 										<span>{dish.description}</span>
@@ -97,6 +108,7 @@ export function DishDetails() {
 														title={"Edit plate"}
 														onClick={() => navigate(`/editplate/${dish.id}`)}
 													></SmallButton>
+													
 												</>
 											) : (
 												<CounterOrders>
